@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Submit Emergency Assistance Request">2fab4449c3998790c5d75242b401311d</sc_cat_item>
+        <sc_category display_value="Emergency Services">d9b010c1c3d98790c5d75242b401316c</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-03 20:26:30</sys_created_on>
+        <sys_id>d2b21805c3d98790c5d75242b40131ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Emergency Services.Submit Emergency Assistance Request</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sc_cat_item_category_d2b21805c3d98790c5d75242b40131ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-03 20:26:30</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>
