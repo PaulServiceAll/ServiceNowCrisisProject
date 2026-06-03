@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_physical_location" label="Physical Location" language="en" table="x_1834272_emergenc_disaster_assistance_request">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_physical_location</element>
+            <help/>
+            <hint/>
+            <label>Physical Location</label>
+            <language>en</language>
+            <name>x_1834272_emergenc_disaster_assistance_request</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-03 17:07:23</sys_created_on>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_name>Physical Location</sys_name>
+            <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+            <sys_update_name>sys_documentation_x_1834272_emergenc_disaster_assistance_request_u_physical_location_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-03 17:07:26</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

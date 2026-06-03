@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cfacd7fcc3158790c5d75242b40131b6" extends="task" label="Disaster Assistance Request" max_length="40" name="x_1834272_emergenc_disaster_assistance_request" type="collection">
+        <element choice="1" label="Assistance Type" mandatory="true" max_length="40" name="u_assistance_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Infrastructure Assistance" sequence="3" value="infrastructure_assistance"/>
+                <element inactive_on_update="false" label="Temporary Housing" sequence="0" value="temporary_housing"/>
+                <element inactive_on_update="false" label="Food/Medical Supplies" sequence="2" value="food_medical_supplies"/>
+                <element inactive_on_update="false" label="Emergency Funding" sequence="1" value="emergency_funding"/>
+            </choice>
+        </element>
+        <element label="Primary Contact Email" mandatory="true" max_length="40" name="u_citizen_email" type="string"/>
+        <element label="Citizen Full Name" mandatory="true" max_length="40" name="u_citizen_name" type="string"/>
+        <element label="Funding Amount Requested" max_length="20" name="u_funding_amount_requested" type="currency"/>
+        <element choice="1" default="pending_staff_verification" label="Booking Status" mandatory="true" max_length="40" name="u_booking_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cancelled" sequence="4" value="cancelled"/>
+                <element inactive_on_update="false" label="Awaiting Manager Approval" sequence="1" value="awaiting_manager_approval"/>
+                <element inactive_on_update="false" label="Modified" sequence="3" value="modified"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
+                <element inactive_on_update="false" label="Pending Staff Verification" sequence="0" value="pending_staff_verification"/>
+            </choice>
+        </element>
+        <element label="Physical Location" mandatory="true" max_length="40" name="u_physical_location" type="string"/>
+    </element>
+</database>
