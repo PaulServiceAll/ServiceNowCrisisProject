@@ -1,11 +1,26 @@
-# Emergency Disaster Assistance Application (ServiceNow Scoped App)
+# Emergency Disaster Assistance System
 
-## 🛠️ Architecture & Technical Overview
-A fully encapsulated, custom ServiceNow application built in a scoped environment designed to manage civilian humanitarian aid requests dynamically during emergency responses. 
+An application built on the ServiceNow platform designed to streamline and manage emergency disaster relief workflows. This solution provides an intuitive front-end portal experience for citizens to securely submit and track their relief requests while maintaining isolated, parameter-driven data access.
 
-### Key Technical Implementations:
-* **Custom Data Modeling:** Created custom tables extending the core `Task` framework, leveraging structural field mapping and role-based access controls.
-* **Overridden Sequence Engines:** Configured localized Number Maintenance rules (`ERXXXXXXX`) to safely decouple tracking protocols from native incident lifecycles.
-* **Client-Side Dynamics:** Developed targeted UI Policies to enforce runtime conditional rendering and mandatory fields (`Funding Amount Requested`) based on localized inputs.
-* **Server-Side Gatekeepers:** Authored a robust `Before Update` Business Rule tracking previous state differentials to strictly enforce workflow validation policies.
-* **Automated Stakeholder Loops:** Designed HTML/CSS notification engines featuring contextual dynamic scripting variables for real-time stakeholder escalation.
+## 🚀 Key Features
+
+*   **Disaster Request Ingestion:** Structured intake processing via custom Service Catalog Record Producers.
+*   **Secure Citizen Lookup Gateway:** An unauthenticated gatekeeper interface that validates citizen identity tokens securely.
+*   **Dynamic Data Isolation:** Seamlessly captures URL query parameters to strictly filter and display individual tracking records without exposing global table data.
+
+---
+
+## 🛠️ System Architecture & Configuration
+
+The tracking subsystem utilizes an entirely configuration-driven, low-code architecture that avoids modifying global ServiceNow master scripts.
+
+### 1. Verification Gateway (Record Producer)
+The **Track My Request Gatekeeper** processes the user's initial tracking inquiry. Upon submission, it prevents the creation of a dummy record and formats an encrypted query string targeted at the dashboard:
+
+```javascript
+// Build a native URL query that tells the URL Widget exactly how to filter the database rows
+var filterString = "u_citizen_name=" + producer.gatekeeper_name + "^u_citizen_email=" + producer.gatekeeper_email;
+
+producer.portal_redirect = "?id=disaster_status_lookup&table=x_1834272_emergenc_disaster_assistance_request&filter=" + encodeURIComponent(filterString);
+
+current.setAbortAction(true);
