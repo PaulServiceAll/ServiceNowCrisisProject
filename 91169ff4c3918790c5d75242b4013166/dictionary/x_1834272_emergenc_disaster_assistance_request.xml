@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="cfacd7fcc3158790c5d75242b40131b6" extends="task" label="Disaster Assistance Request" max_length="40" name="x_1834272_emergenc_disaster_assistance_request" type="collection">
+    <element attributes="text_search_all_fields=true" db_object_id="cfacd7fcc3158790c5d75242b40131b6" extends="task" label="Disaster Assistance Request" max_length="40" name="x_1834272_emergenc_disaster_assistance_request" type="collection">
         <element choice="1" label="Assistance Type" mandatory="true" max_length="40" name="u_assistance_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Infrastructure Assistance" sequence="3" value="infrastructure_assistance"/>
                 <element inactive_on_update="false" label="Temporary Housing" sequence="0" value="temporary_housing"/>
                 <element inactive_on_update="false" label="Food/Medical Supplies" sequence="2" value="food_medical_supplies"/>
                 <element inactive_on_update="false" label="Emergency Funding" sequence="1" value="emergency_funding"/>

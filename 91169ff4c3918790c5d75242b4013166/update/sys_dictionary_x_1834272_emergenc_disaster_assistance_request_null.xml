@@ -2,7 +2,7 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="" extends="task" table="x_1834272_emergenc_disaster_assistance_request">
         <active>true</active>
         <array>false</array>
-        <attributes/>
+        <attributes>text_search_all_fields=true</attributes>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -58,7 +58,7 @@
         <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
         <sys_update_name>sys_dictionary_x_1834272_emergenc_disaster_assistance_request_null</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-03 16:31:34</sys_updated_on>
+        <sys_updated_on>2026-06-05 18:44:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

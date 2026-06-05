@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2855000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27800</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>To freeze the record's fields and ask for manager to approve</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>disaster_assistance_governance_and_approvals</internal_name>
+        <label_cache>[{"name":"e3552951-7fdd-4135-87fc-37e95bc8feef.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"27cd1109-74f6-4678-8f1f-15d1c6ad18be":["condition"],"7f548de2-f4a8-4456-a0fc-8e872fa67fd7":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.u_booking_status","label":"Trigger - Record Updated➛Disaster Assistance Request Record➛Booking Status","reference":"","reference_display":"Booking Status","type":"choice","base_type":"choice","parent_table_name":"x_1834272_emergenc_disaster_assistance_request","column_name":"u_booking_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"used":false,"label":"Pending Staff Verification","image":"","reference":false,"rawLabel":"Pending Staff Verification","selected":false,"missing":false,"value":"pending_staff_verification","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Awaiting Manager Approval","image":"","reference":false,"rawLabel":"Awaiting Manager Approval","selected":false,"missing":false,"value":"awaiting_manager_approval","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Modified","image":"","reference":false,"rawLabel":"Modified","selected":false,"missing":false,"value":"modified","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Cancelled","image":"","reference":false,"rawLabel":"Cancelled","selected":false,"missing":false,"value":"cancelled","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}}],"usedInstances":{}},{"name":"{{static.11700005c3598790c5d75242b4013125}}","label":"DisasterAssistanceManagers","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"e3552951-7fdd-4135-87fc-37e95bc8feef":["approval_conditions"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Disaster Assistance Request Record","reference":"x_1834272_emergenc_disaster_assistance_request","reference_display":"Disaster Assistance Request","type":"reference","base_type":"reference","usedInstances":{"e3552951-7fdd-4135-87fc-37e95bc8feef":["record"],"ecba11fe-6cee-4d55-ad3e-6402e6a46740":["record"],"8c4945b4-39e7-46d9-aae7-87d2fd846b3d":["record"]},"attributes":{}}]</label_cache>
+        <master_snapshot>e9da3da5c391cb90c5d75242b4013168</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Disaster Assistance Governance and Approvals</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>31da3da5c391cb90c5d75242b40131c4</remote_trigger_id>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:08:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f6a87521c391cb90c5d75242b4013151</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Disaster Assistance Governance and Approvals</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sys_hub_flow_f6a87521c391cb90c5d75242b4013151</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:32</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1834272_emergenc_disaster_assistance_request">u_booking_statusCHANGESTOawaiting_manager_approval<item display_value="Awaiting Manager Approval" endquery="false" field="u_booking_status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="awaiting_manager_approval"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>31da3da5c391cb90c5d75242b40131c4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:22</sys_updated_on>
+        <table>x_1834272_emergenc_disaster_assistance_request</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>f6a87521c391cb90c5d75242b4013151</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:56:32</sys_created_on>
+        <sys_id>cd930ae5c3d1cb90c5d75242b40131f9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:32</sys_updated_on>
+        <trigger display_value="">31da3da5c391cb90c5d75242b40131c4</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=f6a87521c391cb90c5d75242b4013151^sys_idNOT INcd930ae5c3d1cb90c5d75242b40131f9"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f6a87521c391cb90c5d75242b4013151^sys_idNOT INbaa87521c391cb90c5d75242b4013152"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f6a87521c391cb90c5d75242b4013151</id>
+        <name>Disaster Assistance Governance and Approvals</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:08:52</sys_created_on>
+        <sys_id>baa87521c391cb90c5d75242b4013152</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:08:52</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=baa87521c391cb90c5d75242b4013152"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f6a87521c391cb90c5d75242b4013151^sys_idNOT IN48daf9a5c391cb90c5d75242b4013153,c0daf9a5c391cb90c5d75242b401314e,c8daf9a5c391cb90c5d75242b4013148"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</model>
+        <model_id>f6a87521c391cb90c5d75242b4013151</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>48daf9a5c391cb90c5d75242b4013153</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=48daf9a5c391cb90c5d75242b4013153"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</model>
+        <model_id>f6a87521c391cb90c5d75242b4013151</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>c0daf9a5c391cb90c5d75242b401314e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c0daf9a5c391cb90c5d75242b401314e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</model>
+        <model_id>f6a87521c391cb90c5d75242b4013151</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>c8daf9a5c391cb90c5d75242b4013148</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c8daf9a5c391cb90c5d75242b4013148"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f6a87521c391cb90c5d75242b4013151^sys_idNOT IN44daf9a5c391cb90c5d75242b401316b"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <generation_source/>
+        <name>Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>44daf9a5c391cb90c5d75242b401316b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:19</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f6a87521c391cb90c5d75242b4013151^sys_idNOT IN00daf9a5c391cb90c5d75242b401316e,285fb5edc391cb90c5d75242b40131b8,a85fb5edc391cb90c5d75242b40131b5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>00daf9a5c391cb90c5d75242b401316e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 18:01:08</sys_updated_on>
+        <ui_id>e3552951-7fdd-4135-87fc-37e95bc8feef</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Yy27bOBT9FUNrx0M9LXsX1Migg5kGSNJu4kCgScpmQUuqSKXxCP73uRKpR+3EtQcuijTdCOB9UOdeniOSui8tTq2pNQ5jh00mDlrYCLkIhT5BocsW7jgYu5gga2gleM0gMmckzSmMH7EoKkNZfswoVoxG9ogUec4Std2Cn3KZCbz5ZMLAQlZcUPBb0/uHoZXhHGZULLem5Y7rWEgCL5iA0JsG0y5GtcmqMU1JsQZcEW+Mf5vMmfEM3s/AA0kVHDS02JNiCWWAI8ZCsqG1xgkUmeYba6ryAgw5w/Q6EZs2YsUTpetc4yfJ/4UXu04VFzMojJgetMPI9Eeb4xlW+BZmJqrI23alnDCpW0JZjAuh3vVtOuA6UzxNdIrCC9Fkp6JYJx90Q6x2gt5yFBJAsKyqs0Kuy4pvV+nXmwbkFU/qjpgSRUqwaEdYqZwvClXBKS0mWN3iNc4yniyjLE8feZ0MUNajpYDBKBbpV3in5MtkhEmFewRdxaMrsM9q8yec86qIf2AaSN4OLbmR7wSWsisFehh9KSokujBTQlR3QbegyiM5z9QlvOWRGczboaH7ghzkFumopKfr2P4U2aHrOWMngnLzJTSpWkgsgccRgORS4Wpxc/alYFLty2BmggeXbfDgpg0+TSFHVNEo5M6UsVOV0Uc9jGrft/Ko0wYftMOowz6sDmPp5KF59Yw6QvSK1GHKevXy+J4ymBe4PjzGsYtsx0YhC8KQTBAmYRD4nttxCBBADVgA17GEuTuNnOHjfwSMhtqXBgfIyOB4EaChu4SFSZY7VL9tjIbmzok0f3kXsIO3RPSC3+10WVv2+vxjFFG97mPC4YP6vuJR4CyCCQrpBY3R4sILXf8CE4YuWGD7zKcB8W33B6gI2Ye+zDR8hqQxZ6J/rGoc+2LqeU4T1RGo9kR1ZWC9BNdIqh4+t4PU+Ts7yPmkFSL0mrT1lo5Y5CDZWG8j+ZwWeXJAAdEKDkoVM15UQi/iNEUcAbJRxF8a5a4gdsH/Hz24v/Xw6+vB8w9SrXc4b1lN0oTyCrHsqUJ/mZm8TDZ/3pclXCEUJyPbHsPSI5+4/iQcTxDx6dh3PGfhIdu1HX+7fbjOb9hnRtTpmfvC+zkgTtP2EQ1v/x8UgsnvLYBRdneqNEl9dXdnUeM0CvfO9UfhlQn8rdyayEGuxZOOW7SABmHV/6VQzi0Ne25N51aSJmxuDedWFRVV5KrNEAHgWkdtK8vtVluKHJsJ7N6wy6Z4I+tISVaMAjdr6zeWqBaDsZ/j/90RPWn0NyvYYKabst+m5tLW4NR94Xs7660JqGf64473d1j/bDus91t+57iiRe0lBrZP+PqdUZMP/wHv6f5h1BYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=00daf9a5c391cb90c5d75242b401316e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>7f548de2-f4a8-4456-a0fc-8e872fa67fd7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:37:56</sys_created_on>
+        <sys_id>285fb5edc391cb90c5d75242b40131b8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 18:01:08</sys_updated_on>
+        <ui_id>8c4945b4-39e7-46d9-aae7-87d2fd846b3d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27iMBT9FeR1hBJCGcquKkIaqdNKdIZNp4oc+wLWOI/6QWEQ/z7XiRMQVC2VukHD7r7sc47vIU9bIjgZkT7wMLqOBiyO4rgXhr1hP0oHcRr1eEwBIhKQnGaAnQpYoTjGKyqtS2y3v0pODfAk6jKrFORmt8M6F7qUdDPzbZhhSyE51sno6TkgJVV4ogFFRtuj0rmQJE1BYuu0wXSM0WxKF/OC2QxxJaJJ3vnJsa90vo+xgkMOThQGBNYGcg4IZE6lhoBkNEeWhdqQkVEWEwoof8jlpu1YitzURDO61uIv3twPXd8ckBnzIrRh4gWq0/MxNfQRT2bGqlavQjDQtSYc5tRKc3uYqxseSiOKvB4xNJXNdCFtlt/XipD2gIP3sBpBQOl4OuQ1rfnjsnidNiAnIq8k8RRlwahsI2qMEqk1Ds6WgIRK44yWpcgXSamKlaiGEUrWXUgMunNZvOKdWizyLmUOdxdVpd0J5sdVekaVcCR+4DE4vAuI3uhbSbXeU0ENkxfrkNTEPIWkUqGSIKk2wQ0zJUpzg1etwAPfBX7p06v3Noxd7xfq4Mz94q+TaBj3e996CRJXC5TLPSnVuNIJwhXaUPfMCl4saHPqiLFv7ty0zZ1p2/w5s5xBpTHLz2pF3qbm/XKSuzuc7dzXBe+Wqy9zy/CS3OJpXLxdPjJJ2Hv3b/hgkypf6AOD2CQtij+OHG63sfq3DcOYM7foUgI/dcTHA59zxRnYG1dMBEiu3yDTWAIyRGogqckd2cIXOzNfbD8kX+aNaBBWvwtyyH/zPXn+Bz1qaSRGCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=285fb5edc391cb90c5d75242b40131b8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>27cd1109-74f6-4678-8f1f-15d1c6ad18be</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:37:56</sys_created_on>
+        <sys_id>a85fb5edc391cb90c5d75242b40131b5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 18:01:08</sys_updated_on>
+        <ui_id>ecba11fe-6cee-4d55-ad3e-6402e6a46740</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27iMBT9FeR1FCWEMpRdVYQ0UqeV6AybThU58QWscR71g8Ig/n2uEydEULVU6gYNu/uyzzm+hzztCGdkTAbAgvA6HKZRGEX9IOiPBmEyjJKwzyIKEBKP5DQD7JSQFpJhvKbC2MRu96tkVAOLQz81UkKu93usM65KQbdz14aZdMUFwzoZPz17pKQST9QgyXh3VDoXkqAJCGydNZiOMeptaWNWpCZDXDFvknducuIqve8TrOCQhRMGHoGNhpwBAllQocAjGc2RZSG3ZKylwYQEyh5ysW07VjzXNdGMbhT/izcPAtu3AGSWOhHaMHYC1enFhGr6iCen2shWr4KnoGpNGCyoEfq2m6sbHkrNi7we0TQRzXQhTJbf14qQ9oDOexiFIKC0PC3ymtbicVW8zhqQU55XkjiKokipaCOqteSJ0RbOjoCASuOMliXPl3EpizWvhhFK5i8FBv5CFK94p+LL3Kepxe2jqtSfYn5SpedUckviBx6Dw3uPqK26FVSpAxXUMH4xFklNzFGIKxUqCeJqE+xwKnmpb/CqNTjge88tfXL13oal14eF6px5WPxNHI6iQf9bP0bicoly2SelClc6RrhcaWqfWcKLAaVPHTFxzb2btrk3a5s/Z5YzqDRm+VmtyNvUnF9Ocnfd2d59XXBuufoyt4wuyS2OxsXb5SOTBP13/4Y7m1T5QnUMYuKkKP5Ycrjd2qjfJggihkCRKrBTQ3zY/zlPnIG88cSUg2DqDSqNISBDoBrimtqRKVyxN3fF9jPyZc4Ih0H1uyB//Ddfk+d/jlZIR0QJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a85fb5edc391cb90c5d75242b40131b5"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f6a87521c391cb90c5d75242b4013151^sys_idNOT IN205fb5edc391cb90c5d75242b40131b7,e45fb5edc391cb90c5d75242b40131b2"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">285fb5edc391cb90c5d75242b40131b6</block>
+        <comment/>
+        <connected_to>27cd1109-74f6-4678-8f1f-15d1c6ad18be</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:37:56</sys_created_on>
+        <sys_id>205fb5edc391cb90c5d75242b40131b7</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:27</sys_updated_on>
+        <ui_id>7f548de2-f4a8-4456-a0fc-8e872fa67fd7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy24TMRT9lcjryWgeneaxq4BKSEAlWnVDq5HHvk4MHnuwPUlDlH/neh5pBI1ACLFiF5/7OufOudkT0/qm9e7OXDknV5osPz1GROqA4e890bQGsiTMaC69NLrsgIhsqGpD4I1yMJFiYuEzMA8cQ1y6RtHd/fkMtpaKWximNdRiTw+WLPc/hPyugVLRChQ2uvVW6hWWS44vkVCRLljK8uwyz5Ikm1+k1WVepRnPKdAM88bCVyP5ybsOic6qCvMQd+MkY3mglSYRgScPmiP9paCoKCI11Zx6Y3dHxALlN1o9A2upPbYjIfnJyW/YOyuKkCgANTLog8dnOayuh9naSAY3TSDYI55WaqhhRrW1/tDrCEsHQVvlx6Uj0jrsB00gHVgMlMTt2mw/jgOvpe4EDkFlGFXHF/W4hqr14MKHAQU1Nipr2jS4nLKxZiO7YuRSxyuFj1gos8WhwUkxZYF4jDui8TXirzv4nloZVLzHNljc06yok6zsXIftvEUJh24t5dc2EOoFDlLKfhuY4JiVjb/CORsYWB+iny174tb9HvKiyBZFOp0JzqcXaV5M5zPBpvkMFkXF5gJAxMgN1VFVOk89HA4PbZLk/LzF/1bbf3AX6Ut38cJFnD+G7BfHED7fb95CkiT/j+H0GKQre1MP2rrhf3wLj8H4/QTX+4YDkw6J3AXs7fgvHwI7NIBkp9DW2C9BwjN2+A5+ZXHpLwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a45fb5edc391cb90c5d75242b40131b1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:37:56</sys_created_on>
+        <sys_id>e45fb5edc391cb90c5d75242b40131b2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:27</sys_updated_on>
+        <ui_id>27cd1109-74f6-4678-8f1f-15d1c6ad18be</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8lUBnW9DD8utmtAgQoG2AJsilDYQVubSJUqJKUnZcw//epR6O0dpoUeTYmzjL3Z1ZzuoQ6MbVjbOPemWtXFfB8svzKJCVx+j7EFRQYrAMmK64dFJXeQuMgi2oxgfuxM2qro3eIieUS1sr2D9dDLKNVNxg36MGQ5UcmmB5+CXk9jXmCgpUVOPBGVmtKV1yOokIRLxgMUuTaZpEUTKfxMU0LeKEp4CQ0r0h8d1A+eZDi4yuavH9CLdDJ224pxVHowBfHFac6C8FKIujoISKg9Nmf0IMAr+v1CuwkZWjcoG//GLlD6qdZJm/KJA0MuyCp2PeT62D2UZLhve1J9ghDgrV5zCtmrL61Onw80YBjXLDvAlpLNXD2pP2LHpK4mGjd5+HhreyagX2QaUZqNMJHI2haBxa/zCosKRCeQl1TcPJ/WPKNpm4lOFa0SEUSu+oqfdPCMwTD2lGEN4S/r6Fn8BIr+IjlaHkjmYBVrK89RqVc4YkHNux5N8bT6gT2EvJu2nQBcuMrN2K+myxZ30c/W7UM48eDphmWbLI4vFMcD6exGk2ns8EG6czXGQFmwtEEUJrVVC5deDwePzaRFHK4aq736rsW+zFAjKRxVF2eS8m00t7cWEjri9D8odl8M/3l7sQRdH/ZThfBmnzztS9trb5P+/Cszd+18F2vuHIpCUijx67G/7tPrAnA0h2Du20+eYlvGLHn8Dc1tYlBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f6a87521c391cb90c5d75242b4013151"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>40daf9a5c391cb90c5d75242b4013157</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>44daf9a5c391cb90c5d75242b4013152</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:14</sys_created_on>
+        <sys_id>ccdaf9a5c391cb90c5d75242b401314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f6a87521c391cb90c5d75242b4013151"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f6a87521c391cb90c5d75242b4013151"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27800</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>To freeze the record's fields and ask for manager to approve</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>disaster_assistance_governance_and_approvals</internal_name>
+        <label_cache>[{"name":"e3552951-7fdd-4135-87fc-37e95bc8feef.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"27cd1109-74f6-4678-8f1f-15d1c6ad18be":["condition"],"7f548de2-f4a8-4456-a0fc-8e872fa67fd7":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.u_booking_status","label":"Trigger - Record Updated➛Disaster Assistance Request Record➛Booking Status","reference":"","reference_display":"Booking Status","type":"choice","base_type":"choice","parent_table_name":"x_1834272_emergenc_disaster_assistance_request","column_name":"u_booking_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"used":false,"label":"Pending Staff Verification","image":"","reference":false,"rawLabel":"Pending Staff Verification","selected":false,"missing":false,"value":"pending_staff_verification","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Awaiting Manager Approval","image":"","reference":false,"rawLabel":"Awaiting Manager Approval","selected":false,"missing":false,"value":"awaiting_manager_approval","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Modified","image":"","reference":false,"rawLabel":"Modified","selected":false,"missing":false,"value":"modified","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}},{"used":false,"label":"Cancelled","image":"","reference":false,"rawLabel":"Cancelled","selected":false,"missing":false,"value":"cancelled","parameters":{"name":"x_1834272_emergenc_disaster_assistance_request","dependent_values":[""]}}],"usedInstances":{}},{"name":"{{static.11700005c3598790c5d75242b4013125}}","label":"DisasterAssistanceManagers","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"e3552951-7fdd-4135-87fc-37e95bc8feef":["approval_conditions"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Disaster Assistance Request Record","reference":"x_1834272_emergenc_disaster_assistance_request","reference_display":"Disaster Assistance Request","type":"reference","base_type":"reference","usedInstances":{"e3552951-7fdd-4135-87fc-37e95bc8feef":["record"],"ecba11fe-6cee-4d55-ad3e-6402e6a46740":["record"],"8c4945b4-39e7-46d9-aae7-87d2fd846b3d":["record"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Disaster Assistance Governance and Approvals</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Disaster Assistance Governance and Approvals">f6a87521c391cb90c5d75242b4013151</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e9da3da5c391cb90c5d75242b4013168</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:31</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e9da3da5c391cb90c5d75242b4013168^sys_idNOT IN29da3da5c391cb90c5d75242b4013169"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e9da3da5c391cb90c5d75242b4013168</id>
+        <name>Disaster Assistance Governance and Approvals</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>29da3da5c391cb90c5d75242b4013169</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:20</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=29da3da5c391cb90c5d75242b4013169"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e9da3da5c391cb90c5d75242b4013168^sys_idNOT IN21da3da5c391cb90c5d75242b4013186,a1da3da5c391cb90c5d75242b401317b,a5da3da5c391cb90c5d75242b401316b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</model>
+        <model_id>e9da3da5c391cb90c5d75242b4013168</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>21da3da5c391cb90c5d75242b4013186</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:30</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=21da3da5c391cb90c5d75242b4013186"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</model>
+        <model_id>e9da3da5c391cb90c5d75242b4013168</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>a1da3da5c391cb90c5d75242b401317b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:38:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a1da3da5c391cb90c5d75242b401317b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</model>
+        <model_id>e9da3da5c391cb90c5d75242b4013168</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>a5da3da5c391cb90c5d75242b401316b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:30</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a5da3da5c391cb90c5d75242b401316b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e9da3da5c391cb90c5d75242b4013168^sys_idNOT INb1da3da5c391cb90c5d75242b40131b4"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <generation_source/>
+        <name>Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:21</sys_created_on>
+        <sys_id>b1da3da5c391cb90c5d75242b40131b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:21</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VaWW/bOBD+K4KedgHvQofP9CmbYxsgbQDH7T4UhUCRlC1UJh2RUuIt+t93qMuyDseH0nVfEpikON8Mv/lmaPnLdz1ALg30C32G3IDqPd1nkoYMBbP1isKwVMMOQ0s1t0SMIMnDtX4hw4j2dC/kyxldrgIkYbGHAgGDPCQ01C/Mnh6jIKKPa3FHYCd4Ptkm21PPpuHzi2OO7b41shy6pOGcMuwQXyABQBwkhC8kYpg6IX2KqJDwIMyCyfXn7PnrbLF2WSzWpsVivPADElKmX3z52tNXKAQQUgH8XpnyFUqTEGRa1MC2aVuWYVjjvukObde0iI0oGsOG1YhVvJINgduEhL5IygglRbRqMQ0pIg8sWJdWvAj/X9hzbKhZjwJiTNOIFh+dLCbpMF5wH9OHlfQ5S0dSdOkkD6Il+5iiVtGkHooCmUcTRiIB+9GVAspkgcN7XPDnaW7w1meJT9lkwDEKik9IytB3I0mFCrPnB+oo04gIHoUJ+unN1cP02vnncnb1/mbqTG8eZ9O7q9nNtf4j8ct5itSOKcIMi5O686OgwK1PA3VsLFq6gKanCxz6K3mJpR/njPzR27D8ijPiJ1GpMR3nU2Kb6bn3u6huGK1kxyWLOeEjx+X8m8/mDrBVRuLq/eXHv8H/B/SMYC2Mg300V/RfrUIOjx3MY9edIEJRC4+HoxKPyzFpAC0bwlP2exejs5F2SvcN438idSZgx3J6yQkNrjfb6TA5Vyfms1UkVYzyuDh8RUMVD3hO/3x5nx32u+z/7fThw7uCAPDcM2JSOJI7iBCnFHVlAnx5LTnSmNQz5PXcCCMGWzjFedYzJDmA4iTuQWuBcZDfeZSTLWHeu8+2nEZM43Dw8EfDUQhBllquk97dEiieIvMeaUCxLJHI+yTKnz74IO1sXkJdGE2iUrNZmAMyarlLqW1xovGvXcpDPehxJZiVYnewEgwxMfvuaGiMlA6Yhu16pjEyBsgjtmFM7JIS1MG0opQVSnSoCIfpgUgoGOxBuGpgM8hGOQf2Ik+8zbzcdUWMTHauuoFmdgTNUtAq8mkfpJ8FGdPh621O7nKt414CkVj1d2RfOVQL9tA9L+DPIN1HaJ6L8Ld5yCNGqiKk9tR8pm1WaL9l8fu9Q/3zeEh3A9hecU7Ktwl7TlzE1h1oXp9iMhr2hwZInQ0q5w4mExcjy/NGwxE1SEXzNjAasZ2x1r3CsbiJpG2610iXuIllByjeCQBr6ncwwNN1L6Njo+qlc7+Gvj0vKHMAaugEfnIrrsjcPPAJzee6zfGa6XiT1afmue2NyWAwGuER3HAgz70+dZHZtwZoMhradFjJ8xqUXTBlQ2Te8N4j1iIx36IBn9Kp87rYvyVZBZXqJnxERWbQqSbPoNRIqSqqw9ASKeGh9pGzP+4267RHCsUuufJ2VZr3QaEOVntbGC6Xi1pvAKb/gvEt06qnbInK2V2aKiSJt309uYEY25MB8exmYRlZTcKyAdMO80xbiT3zIm7NsKaeYl+ax43Z0toEHEHcCjnK3cGO9qWroJidB8V6u6DYJ7dMeQa23hSPAfsLFa6khzileimb1OFeWbKvuQYTGhjRfE/LvmuEi7+71uSCQkgD6I3BoKasn6rV5dpRh1Iw+OcCSbvtWg2DYS1rm86vPFWo0O0dF3sTl0zslt530N77ttepyvSZFquDcyFuSq2dFeuwfat7NtasElG3ebBnNerU6+aSdJrXjUXpNa9PLze7bugNKM6/kCjQs/QYjigfnOHKXQN3+bIlYv5TRB28QGyevkjJDd1CnCnCCy1doqVLuiwAwTNaC71aiYC0Ki+yr51hADKEpfrVlWUa03Bd81UNatGKqOLw04vPjh9XZO8hhQzhyfl6K2NxFy+UsDkZWDYZY9uc2PWfSJilwrPN5XaErZXmlV9MtFWahZ+8ky2Zz85L+kua6FrxYlVbIokXVPQ0ONTkJUYie34oZLL6T73DWxam9eNoKkStyRS35WGrsO/Ij7iaWU1K3sD1uJIXZS3feZ/a4b7ZiftWF+7bx7nfP7mU5fnZWMuy6HVbv44tV1//Az+kagc5JgAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e9da3da5c391cb90c5d75242b4013168^sys_idNOT IN525f39edc391cb90c5d75242b40131bc,925f39edc391cb90c5d75242b40131bd,f5da3da5c391cb90c5d75242b40131b1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>27cd1109-74f6-4678-8f1f-15d1c6ad18be</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:38:03</sys_created_on>
+        <sys_id>525f39edc391cb90c5d75242b40131bc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:38:03</sys_updated_on>
+        <ui_id>ecba11fe-6cee-4d55-ad3e-6402e6a46740</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27iMBT9FeR1FCWEMpRdVYQ0UqeV6AybThU58QWscR71g8Ig/n2uEydEULVU6gYNu/uyzzm+hzztCGdkTAbAgvA6HKZRGEX9IOiPBmEyjJKwzyIKEBKP5DQD7JSQFpJhvKbC2MRu96tkVAOLQz81UkKu93usM65KQbdz14aZdMUFwzoZPz17pKQST9QgyXh3VDoXkqAJCGydNZiOMeptaWNWpCZDXDFvknducuIqve8TrOCQhRMGHoGNhpwBAllQocAjGc2RZSG3ZKylwYQEyh5ysW07VjzXNdGMbhT/izcPAtu3AGSWOhHaMHYC1enFhGr6iCen2shWr4KnoGpNGCyoEfq2m6sbHkrNi7we0TQRzXQhTJbf14qQ9oDOexiFIKC0PC3ymtbicVW8zhqQU55XkjiKokipaCOqteSJ0RbOjoCASuOMliXPl3EpizWvhhFK5i8FBv5CFK94p+LL3Kepxe2jqtSfYn5SpedUckviBx6Dw3uPqK26FVSpAxXUMH4xFklNzFGIKxUqCeJqE+xwKnmpb/CqNTjge88tfXL13oal14eF6px5WPxNHI6iQf9bP0bicoly2SelClc6RrhcaWqfWcKLAaVPHTFxzb2btrk3a5s/Z5YzqDRm+VmtyNvUnF9Ocnfd2d59XXBuufoyt4wuyS2OxsXb5SOTBP13/4Y7m1T5QnUMYuKkKP5Ycrjd2qjfJggihkCRKrBTQ3zY/zlPnIG88cSUg2DqDSqNISBDoBrimtqRKVyxN3fF9jPyZc4Ih0H1uyB//Ddfk+d/jlZIR0QJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=525f39edc391cb90c5d75242b40131bc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>7f548de2-f4a8-4456-a0fc-8e872fa67fd7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:38:03</sys_created_on>
+        <sys_id>925f39edc391cb90c5d75242b40131bd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:38:03</sys_updated_on>
+        <ui_id>8c4945b4-39e7-46d9-aae7-87d2fd846b3d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27iMBT9FeR1hBJCGcquKkIaqdNKdIZNp4oc+wLWOI/6QWEQ/z7XiRMQVC2VukHD7r7sc47vIU9bIjgZkT7wMLqOBiyO4rgXhr1hP0oHcRr1eEwBIhKQnGaAnQpYoTjGKyqtS2y3v0pODfAk6jKrFORmt8M6F7qUdDPzbZhhSyE51sno6TkgJVV4ogFFRtuj0rmQJE1BYuu0wXSM0WxKF/OC2QxxJaJJ3vnJsa90vo+xgkMOThQGBNYGcg4IZE6lhoBkNEeWhdqQkVEWEwoof8jlpu1YitzURDO61uIv3twPXd8ckBnzIrRh4gWq0/MxNfQRT2bGqlavQjDQtSYc5tRKc3uYqxseSiOKvB4xNJXNdCFtlt/XipD2gIP3sBpBQOl4OuQ1rfnjsnidNiAnIq8k8RRlwahsI2qMEqk1Ds6WgIRK44yWpcgXSamKlaiGEUrWXUgMunNZvOKdWizyLmUOdxdVpd0J5sdVekaVcCR+4DE4vAuI3uhbSbXeU0ENkxfrkNTEPIWkUqGSIKk2wQ0zJUpzg1etwAPfBX7p06v3Noxd7xfq4Mz94q+TaBj3e996CRJXC5TLPSnVuNIJwhXaUPfMCl4saHPqiLFv7ty0zZ1p2/w5s5xBpTHLz2pF3qbm/XKSuzuc7dzXBe+Wqy9zy/CS3OJpXLxdPjJJ2Hv3b/hgkypf6AOD2CQtij+OHG63sfq3DcOYM7foUgI/dcTHA59zxRnYG1dMBEiu3yDTWAIyRGogqckd2cIXOzNfbD8kX+aNaBBWvwtyyH/zPXn+Bz1qaSRGCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=925f39edc391cb90c5d75242b40131bd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:21</sys_created_on>
+        <sys_id>f5da3da5c391cb90c5d75242b40131b1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:31</sys_updated_on>
+        <ui_id>e3552951-7fdd-4135-87fc-37e95bc8feef</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Yy27bOBT9FUNrx0M9LXsX1Migg5kGSNJu4kCgScpmQUuqSKXxCP73uRKpR+3EtQcuijTdCOB9UOdeniOSui8tTq2pNQ5jh00mDlrYCLkIhT5BocsW7jgYu5gga2gleM0gMmckzSmMH7EoKkNZfswoVoxG9ogUec4Std2Cn3KZCbz5ZMLAQlZcUPBb0/uHoZXhHGZULLem5Y7rWEgCL5iA0JsG0y5GtcmqMU1JsQZcEW+Mf5vMmfEM3s/AA0kVHDS02JNiCWWAI8ZCsqG1xgkUmeYba6ryAgw5w/Q6EZs2YsUTpetc4yfJ/4UXu04VFzMojJgetMPI9Eeb4xlW+BZmJqrI23alnDCpW0JZjAuh3vVtOuA6UzxNdIrCC9Fkp6JYJx90Q6x2gt5yFBJAsKyqs0Kuy4pvV+nXmwbkFU/qjpgSRUqwaEdYqZwvClXBKS0mWN3iNc4yniyjLE8feZ0MUNajpYDBKBbpV3in5MtkhEmFewRdxaMrsM9q8yec86qIf2AaSN4OLbmR7wSWsisFehh9KSokujBTQlR3QbegyiM5z9QlvOWRGczboaH7ghzkFumopKfr2P4U2aHrOWMngnLzJTSpWkgsgccRgORS4Wpxc/alYFLty2BmggeXbfDgpg0+TSFHVNEo5M6UsVOV0Uc9jGrft/Ko0wYftMOowz6sDmPp5KF59Yw6QvSK1GHKevXy+J4ymBe4PjzGsYtsx0YhC8KQTBAmYRD4nttxCBBADVgA17GEuTuNnOHjfwSMhtqXBgfIyOB4EaChu4SFSZY7VL9tjIbmzok0f3kXsIO3RPSC3+10WVv2+vxjFFG97mPC4YP6vuJR4CyCCQrpBY3R4sILXf8CE4YuWGD7zKcB8W33B6gI2Ye+zDR8hqQxZ6J/rGoc+2LqeU4T1RGo9kR1ZWC9BNdIqh4+t4PU+Ts7yPmkFSL0mrT1lo5Y5CDZWG8j+ZwWeXJAAdEKDkoVM15UQi/iNEUcAbJRxF8a5a4gdsH/Hz24v/Xw6+vB8w9SrXc4b1lN0oTyCrHsqUJ/mZm8TDZ/3pclXCEUJyPbHsPSI5+4/iQcTxDx6dh3PGfhIdu1HX+7fbjOb9hnRtTpmfvC+zkgTtP2EQ1v/x8UgsnvLYBRdneqNEl9dXdnUeM0CvfO9UfhlQn8rdyayEGuxZOOW7SABmHV/6VQzi0Ne25N51aSJmxuDedWFRVV5KrNEAHgWkdtK8vtVluKHJsJ7N6wy6Z4I+tISVaMAjdr6zeWqBaDsZ/j/90RPWn0NyvYYKabst+m5tLW4NR94Xs7660JqGf64473d1j/bDus91t+57iiRe0lBrZP+PqdUZMP/wHv6f5h1BYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f5da3da5c391cb90c5d75242b40131b1"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e9da3da5c391cb90c5d75242b4013168^sys_idNOT IN925f39edc391cb90c5d75242b40131da,9e5f39edc391cb90c5d75242b40131be"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">285fb5edc391cb90c5d75242b40131b6</block>
+        <comment/>
+        <connected_to>27cd1109-74f6-4678-8f1f-15d1c6ad18be</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:38:03</sys_created_on>
+        <sys_id>925f39edc391cb90c5d75242b40131da</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:31</sys_updated_on>
+        <ui_id>7f548de2-f4a8-4456-a0fc-8e872fa67fd7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNn2dAjSmzfAqcBCqQN0AS5NIGwIpcxW1pUSSqOa/jfu5TkB9oYbVEfezNnl7szIw68ZqbxdePdvbl0Tj1XbPr5KWKqChj9XrMKFsimjJtKKK9MVbRAxF5AN6HwTjscKDmw+AW5R0EloVytYfVwvIPPlRYW+201WJrp0bLp+qeSEjRAxiCTCU94lp5naRyn47OkPM/KJBUZIKQ0UEOJmlpnW5qDmxaJjvL3qzrgzltVPffnm37K3RY0VgRWSRwxfPVYCWI/lUCCIraASoA3drVDLIK4rfQemKvK0zgWml+d+k4L0zwPjRJJIseuuDsWvXMdLK/AA1FpuG9s38rnRnF0nTkCJTTazw6xruG2DlK7Kx5Kvb1tdLOoPnaOsN2A7YcipHFEAuugNFDvdci7uVl+2rK8VlXrSl/UhoPencCTd2XjA581Q40LGlQsoK7J0aK25kW1l4nLYvSs6TCS2ixpaXh9I+CB+IiMhdE14Vct/ABWBRUfaAxd7miW4BQv2pdK48gmZJuIuZWbaXBuL5LcLb41gWInuRdXdP6EK9yq2l/S5hfsdWyiXx/+wZtfrzHL83SSJ8MLKcTwLMny4fhC8mF2gZO85GOJKEfElvSCLpwHj5vNYxPHmTgelFONPWm6krfS9Uau/jJS6W8iFb7nHyYqjuP/kfrnSClXdEHotbXLT5iopxCfbufOa64cUbsP2PvtP04orOhxKX4ILY39GkTtsc0PPe7Cz7sGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a45fb5edc391cb90c5d75242b40131b1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Disaster Assistance Governance and Approvals">e9da3da5c391cb90c5d75242b4013168</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:38:03</sys_created_on>
+        <sys_id>9e5f39edc391cb90c5d75242b40131be</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:56:31</sys_updated_on>
+        <ui_id>27cd1109-74f6-4678-8f1f-15d1c6ad18be</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VyW7bMBD9lYBnWdBiebsZDgIESBugCXJpA2HExSZKiapI2XEF/3uHWmwjddAGzbE388325mke3BBd27K25lEvjZHrgiy+PntEFg7D3w0pIOdkQagumLRSF2kLeGQLqnaBW3G1LMtKbzlDlElTKtg/XQzSjVSs4v2MEirsZHlFFs2rkGRYKwIQ4ZyGNI4mcRQE0WwcZpM4CyMWA4cYGyrIuMLU1UDu6q5FvDdZ233pcGMrWaz7913f5WEAdcUcqzDwCH+xvGDIfiFAGe6RHAoGVlf7I1JxYPeFOgEbWVhsR1zyi5E/cWCUJC5RcFyR8i54fKa9aB0srsECUqmpras+lW60pNx04jAuoFZ2dY51CfelW7UrsZCpoVqrOi8+d4qQY4PhGyFSGyTBS7epo97vIR42evdlYHkji1aVPqg0BXV8gUXtsto6Pg3hiufYKM2hLFHR1B2AbIuRS+6vFT58ofQOh7qb84E64j4KC/4N4tct/ASVdFt8wjZY3NHMwEiatveJ7VAmTg4eMXuzUmDMaUlUN/1RO4rdyv1yaaePK6GVLO0SJ295v8fB+/3czy69aXicJNE8CUdTwdhoHMbJaDYVdBRP+TzJ6ExwLnxoDx5UaixYfjh8q4MgZvCmRz6q7fvcNYdEJGGQXHbXeHLJXRd89U5LRX+wlPuef+moIAj+W+qfLSVN2hmh360d/oGOenb26WYetabSILVHh90O/zMusMfjkvQc2unqu1vqhB1+AcDs6ouxBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>29da3da5c391cb90c5d75242b4013177</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:21</sys_created_on>
+        <sys_id>65da3da5c391cb90c5d75242b4013199</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:21</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:20</sys_created_on>
+        <sys_id>a5da3da5c391cb90c5d75242b4013182</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:18:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e9da3da5c391cb90c5d75242b4013168"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>f6a87521c391cb90c5d75242b4013151</sys_id>
+        <latest_snapshot>e9da3da5c391cb90c5d75242b4013168</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch11-12-16-2025_01-04-2026_2103.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f6a87521c391cb90c5d75242b4013151^sys_idNOT IN8ada3da5c391cb90c5d75242b40131c5"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"8ada3da5c391cb90c5d75242b40131c5","name":"plan","plan_signature":null}}</plan>
+        <plan_id>f6a87521c391cb90c5d75242b4013151</plan_id>
+        <snapshot>58a48a69c3d1cb90c5d75242b4013162</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 17:18:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8ada3da5c391cb90c5d75242b40131c5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-05 17:38:04</sys_updated_on>
+        <trigger display_value="">31da3da5c391cb90c5d75242b40131c4</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f6a87521c391cb90c5d75242b4013151"/>
+</record_update>
