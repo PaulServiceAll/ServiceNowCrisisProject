@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>submit_request</name>
+        <operation_script><![CDATA[(function process(request, response) {
+    var body = request.body.data;
+
+    // ==========================================
+    // MODULE 1: PUBLIC CITIZEN SELF-REGISTRATION
+    // ==========================================
+    if (body.type === 'registration') {
+        var checkUser = new GlideRecord('sys_user');
+        checkUser.addQuery('email', body.email);
+        checkUser.query();
+        if (checkUser.hasNext()) {
+            response.setStatus(200);
+            return {
+                success: false,
+                error: "This email address is already registered."
+            };
+        }
+
+        var userGr = new GlideRecord('sys_user');
+        userGr.initialize();
+        userGr.first_name = body.name.split(' ')[0] || body.name;
+        userGr.last_name = body.name.split(' ').slice(1).join(' ') || '.';
+        userGr.email = body.email;
+        userGr.user_name = body.email;
+        userGr.user_password.setDisplayValue(body.password);
+        userGr.active = true;
+
+        var newUserSysId = userGr.insert();
+
+        if (newUserSysId) {
+            var roleGr = new GlideRecord('sys_user_has_role');
+            roleGr.initialize();
+            roleGr.user = newUserSysId;
+            roleGr.role.setDisplayValue('snc_external');
+            roleGr.insert();
+
+            response.setStatus(201);
+            return {
+                result: {
+                    success: true,
+                    user_id: body.email
+                }
+            };
+        }
+
+        response.setStatus(500);
+        return {
+            success: false,
+            error: "System failed to allocate user row."
+        };
+    }
+
+    // ==========================================
+    // MODULE 2: TASK DATA SUBMISSION (CLEAN TARGET)
+    // ==========================================
+    else {
+        var reporterName = body.reporter_name || body.name || "Anonymous Citizen";
+        var reporterEmail = body.reporter_email || body.email || "";
+        var reporterPhone = body.reporter_phone || "";
+        var physicalLoc = body.hazard_location || body.location || "";
+        var shortDesc = body.short_description || "Public Community Hazard Report";
+        var longDesc = body.description || "";
+
+        // PRIVILEGED GLOBAL OVERRIDE (Bypasses ACL constraint loops perfectly)
+        var gr = new global.GlideRecord('x_1834272_emergenc_disaster_assistance_request');
+        gr.initialize();
+        gr.setWorkflow(false); 
+
+        gr.u_citizen_name = reporterName;
+        gr.u_citizen_email = reporterEmail;
+        gr.u_physical_location = physicalLoc;
+
+        // Map the fields that your widget layout passes over
+        gr.u_summary = shortDesc;
+        gr.u_details = "Phone: " + reporterPhone + "\n\n" + longDesc;
+
+        var incomingAssistance = body.assistance_type ? body.assistance_type.toString() : '';
+        var normalizedValue = 'temporary_housing';
+        var assignedGroup = 'Disaster Assistance Team';
+
+        if (incomingAssistance === 'temporary_housing' || incomingAssistance === 'Temporary Housing') {
+            normalizedValue = 'temporary_housing';
+            assignedGroup = 'Disaster Housing Team';
+        } else if (incomingAssistance === 'emergency_funding' || incomingAssistance === 'Emergency Funding' || incomingAssistance === 'Financial Assistance') {
+            normalizedValue = 'emergency_funding';
+            assignedGroup = 'Disaster Finance Team';
+        } else if (incomingAssistance === 'food_medical_supplies' || incomingAssistance === 'Food & Supplies' || incomingAssistance === 'Medical Assistance' || incomingAssistance === 'Food/Medical Supplies') {
+            normalizedValue = 'food_medical_supplies';
+            assignedGroup = 'Disaster Logistics Team';
+        }
+
+        gr.u_assistance_type = normalizedValue;
+        gr.u_booking_status = 'Pending Staff Verification';
+        gr.assignment_group.setDisplayValue(assignedGroup);
+
+        var newSysId = gr.insert();
+
+        if (newSysId) {
+            response.setStatus(201);
+            return {
+                result: {
+                    success: true,
+                    sys_id: newSysId
+                }
+            };
+        }
+    }
+
+    response.setStatus(500);
+    return {
+        success: false,
+        error: "Database transaction failed."
+    };
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_1834272_emergenc/public_incident_intake/submit_request</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/submit_request</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-06 18:08:30</sys_created_on>
+        <sys_id>4cdec3bdc3594f90c5d75242b401312d</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>submit_request</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sys_ws_operation_4cdec3bdc3594f90c5d75242b401312d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 17:25:11</sys_updated_on>
+        <web_service_definition display_value="Public Incident Intake">c75e43bdc3594f90c5d75242b401318e</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

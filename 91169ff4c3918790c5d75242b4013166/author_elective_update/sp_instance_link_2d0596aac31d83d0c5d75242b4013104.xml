@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>2</order>
+        <roles/>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">1a4faca2c31183d0c5d75242b4013144</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 21:46:41</sys_created_on>
+        <sys_id>2d0596aac31d83d0c5d75242b4013104</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Go to Emergency Services</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_instance_link_2d0596aac31d83d0c5d75242b4013104</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 23:01:10</sys_updated_on>
+        <title>Go to Emergency Services</title>
+        <type>url</type>
+        <url>/sp?id=sc_category&amp;sys_id=d9b010c1c3d98790c5d75242b401316c&amp;catalog=e0d08b13c3330100c8b837659bba8fb4</url>
+        <widget_parameters><![CDATA[{
+	"auto_redirect": true,
+	"link_template": {
+		"value": "Top Icon",
+		"displayValue": "Top Icon"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="DELETE" query="documentkey=2d0596aac31d83d0c5d75242b4013104"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</application>
+        <file_path/>
+        <instance_id>3185c048db32f9d4b1eb9027c596191d</instance_id>
+        <instance_name>dev222928</instance_name>
+        <name>sp_instance_link_2d0596aac31d83d0c5d75242b4013104</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_link"&gt;&lt;sp_instance_link action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph&gt;empty&lt;/glyph&gt;&lt;id/&gt;&lt;kb_article/&gt;&lt;kb_category/&gt;&lt;kb_topic/&gt;&lt;order&gt;2&lt;/order&gt;&lt;roles/&gt;&lt;sc_cat_item/&gt;&lt;sc_category/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;1a4faca2c31183d0c5d75242b4013144&lt;/sp_column&gt;&lt;sp_page/&gt;&lt;sp_widget display_value="Icon Link"&gt;3caa67afcb13020000f8d856634c9c2e&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_link&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-08 21:46:41&lt;/sys_created_on&gt;&lt;sys_id&gt;2d0596aac31d83d0c5d75242b4013104&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;Go to Emergency Services&lt;/sys_name&gt;&lt;sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Emergency Disaster Assistance"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_link_2d0596aac31d83d0c5d75242b4013104&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-08 23:01:10&lt;/sys_updated_on&gt;&lt;title&gt;Go to Emergency Services&lt;/title&gt;&lt;type&gt;url&lt;/type&gt;&lt;url&gt;/sp?id=sc_category&amp;amp;sys_id=d9b010c1c3d98790c5d75242b401316c&amp;amp;catalog=e0d08b13c3330100c8b837659bba8fb4&lt;/url&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"auto_redirect": true,
+	"link_template": {
+		"value": "Top Icon",
+		"displayValue": "Top Icon"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_link&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=2d0596aac31d83d0c5d75242b4013104"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1639621603</payload_hash>
+        <record_name>Go to Emergency Services</record_name>
+        <reverted_from/>
+        <source>0f4c5f3cc3158790c5d75242b401312a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 23:01:10</sys_created_on>
+        <sys_id>64166a66c39d83d0c5d75242b4013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ea977f05d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 23:01:10</sys_updated_on>
+        <type>Instance with Link</type>
+        <update_guid>e0166a665d9d83d028fe869ac441f523</update_guid>
+        <update_guid_history>e0166a665d9d83d028fe869ac441f523:1639621603,b0f52e669f9d83d012bb70184fcb2273:-2073115166,e2636666a89d83d0e61342d0813129f6:-2012636070,8e9a1e269c5d83d0ebc60900509208c5:-2073115166,846552ea641d83d056ed70a2517100f5:428707022,e105d6aab21d83d08e46558d6fce2658:-1355112474</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Go to Emergency Services">36a96262c3dd83d0c5d75242b4013189</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 23:16:53</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_link">sp_instance_link</sys_db_object>
+        <sys_id>0a2cbc4fa9264573808f795b101e6719</sys_id>
+        <sys_metadata>2d0596aac31d83d0c5d75242b4013104</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Go to Emergency Services</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_scope_delete display_value="">07e0092b8f414d6280a99c26bf4402d9</sys_scope_delete>
+        <sys_update_name>sp_instance_link_2d0596aac31d83d0c5d75242b4013104</sys_update_name>
+        <sys_update_version display_value="sp_instance_link_2d0596aac31d83d0c5d75242b4013104">64166a66c39d83d0c5d75242b4013124</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 23:16:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

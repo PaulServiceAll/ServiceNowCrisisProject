@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[/* jshint -W025 */
+function($scope, $window) {
+  var c = this;
+  c.data.loading = false;
+  c.data.errorMessage = "";
+
+  c.init = function() {
+    c.username = "";
+    c.password = "";
+    c.data.errorMessage = "";
+  };
+
+  c.login = function() {
+    if (!c.username || !c.password) {
+      c.data.errorMessage = "Please enter both username and password.";
+      return;
+    }
+
+    c.data.loading = true;
+    c.data.errorMessage = "";
+    c.data.username = c.username;
+    c.data.password = c.password;
+    c.data.action = "login";
+
+    c.server.update().then(function(response) {
+      c.data.loading = false;
+      if (response && response.success) {
+        // Let the system naturally bring them to the home page route
+        $window.location.href = '/sp';
+      } else {
+        c.data.errorMessage = response.feedback || "Invalid login credentials.";
+        c.password = "";
+      }
+    }).catch(function(error) {
+      c.data.loading = false;
+      c.data.errorMessage = "A connection error occurred. Please try again.";
+    });
+  };
+
+  c.init();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>disaster_portal_login_redirect</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Disaster Portal Login Redirect</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  if (!input) {
+    data.success = false;
+    return;
+  }
+
+  if (input && input.action === "login") {
+    var username = input.username;
+    var password = input.password;
+
+    try {
+      var isUserValid = GlideSession.get().login(username, password);
+      if (isUserValid) {
+        data.success = true; 
+        data.feedback = "Success";
+      } else {
+        data.success = false;
+        data.feedback = "The username or password you entered is incorrect.";
+      }
+    } catch(e) {
+      var authCheck = new global.GlideAuthenticate();
+      if (authCheck.loginWithLoginPage(username, password)) {
+        data.success = true; 
+        data.feedback = "Success";
+      } else {
+        data.success = false;
+        data.feedback = "Authentication failed. Please verify your credentials.";
+      }
+    }
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 15:46:55</sys_created_on>
+        <sys_id>e3a2c12ac39183d0c5d75242b401315d</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Disaster Portal Login Redirect</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_widget_e3a2c12ac39183d0c5d75242b401315d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 20:27:02</sys_updated_on>
+        <template><![CDATA[<div class="login-container panel panel-default" style="max-width: 450px; margin: 60px auto; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div class="panel-body">
+    <h2 class="text-center" style="color: #4e73df; font-weight: 700; margin-bottom: 25px;">
+      <i class="fa fa-unlock-alt"></i> Portal Sign In
+    </h2>
+    <div ng-if="c.data.errorMessage" class="alert alert-danger" role="alert" style="padding: 10px 15px; margin-bottom: 20px; font-size: 14px;">
+      {{c.data.errorMessage}}
+    </div>
+    <form ng-submit="c.login()">
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label for="username" style="font-weight: 600; color: #4e5154;">Username / Email</label>
+        <input type="text" id="username" class="form-control" ng-model="c.username" placeholder="Enter your username or email" required style="height: 45px; border-radius: 4px;" autofocus>
+      </div>
+      <div class="form-group" style="margin-bottom: 25px;">
+        <label for="password" style="font-weight: 600; color: #4e5154;">Password</label>
+        <input type="password" id="password" class="form-control" ng-model="c.password" placeholder="Enter your password" required style="height: 45px; border-radius: 4px;">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" ng-disabled="c.data.loading" style="height: 45px; font-weight: bold; font-size: 16px; background-color: #4e73df; border-color: #4e73df;">
+        <span ng-if="!c.data.loading"><i class="fa fa-sign-in"></i> Log In</span>
+        <span ng-if="c.data.loading"><i class="fa fa-spinner fa-spin"></i> Authenticating...</span>
+      </button>
+    </form>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e3a2c12ac39183d0c5d75242b401315d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 15:46:55</sys_created_on>
+        <sys_id>6fa2c12ac39183d0c5d75242b4013161</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 15:46:55</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

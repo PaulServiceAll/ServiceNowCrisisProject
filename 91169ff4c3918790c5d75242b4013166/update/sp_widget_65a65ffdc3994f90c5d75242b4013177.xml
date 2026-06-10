@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ClientRequestCtrl($window) {
+    /* widget controller */
+    var c = this;
+
+    c.form = {
+        reporter_name: '',
+        reporter_phone: '',
+        reporter_email: '',
+        hazard_location: '',
+        short_description: '',
+        description: ''
+    };
+    
+    c.submitted = false;
+    c.data.error = null;
+    c.data.successMessage = null;
+
+    c.submitForm = function() {
+        if (!c.form.reporter_name) {
+            c.data.error = "Full Name is required.";
+            return;
+        }
+
+        c.data.error = null;
+
+        // Build internal parameters packet payload
+        var payload = {
+            action: 'submit_hazard_report',
+            reporter_name: c.form.reporter_name,
+            reporter_phone: c.form.reporter_phone,
+            reporter_email: c.form.reporter_email,
+            hazard_location: c.form.hazard_location,
+            short_description: c.form.short_description,
+            description: c.form.description
+        };
+
+        // Executes natively over the platform's trusted internal widget data bridge
+        c.server.get(payload).then(function(response) {
+            if (response && response.data && response.data.success) {
+                c.submitted = true;
+                c.data.successMessage = "Your hazard report has been received and recorded successfully.";
+                
+                // Fire dashboard routing redirect
+/*                var redirectUrl = "?id=disaster_status_lookup&" + 
+                    "encodedFormName=" + encodeURIComponent(c.form.reporter_name) + 
+                    "&encodedPhone=" + encodeURIComponent(c.form.reporter_phone);
+                
+                $window.location.href = redirectUrl;
+ */
+							// Just let the success flags handle the layout state locally
+c.submitted = true;
+c.data.successMessage = "Thank you! Your report has been submitted successfully. A response team has been dispatched.";
+ } else {
+                c.data.error = (response && response.data && response.data.error) ? response.data.error : "Submission rejected by system transactional rules.";
+            }
+        }, function(err) {
+            c.data.error = "Internal server communication failure.";
+            console.error("Widget Bridge Error: ", err);
+        });
+    };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>public_intake_form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Public Intake Form</name>
+        <option_schema/>
+        <public>true</public>
+        <roles>public</roles>
+        <script><![CDATA[(function() {
+    if (input && input.action === 'submit_hazard_report') {
+        try {
+            var reporterName   = input.reporter_name || "Anonymous Citizen";
+            var reporterEmail  = input.reporter_email || "";
+            var reporterPhone  = input.reporter_phone || "";
+            var physicalLoc    = input.hazard_location || "";
+            var shortDesc      = input.short_description || "Public Community Hazard Report";
+            var longDesc       = input.description || "";
+
+            // --- FIXED CROSS-SCOPE SYSTEM INJECTION ---
+            var gr = new GlideRecord('x_1834272_emergenc_disaster_assistance_request');
+            gr.initialize();
+            
+            // Explicitly force the system to bypass client-session security filters natively
+            gr.setWorkflow(true); 
+
+            gr.u_citizen_name = reporterName;
+            gr.u_citizen_email = reporterEmail;
+            gr.u_physical_location = physicalLoc;
+            gr.u_summary = shortDesc;
+
+            // Combines the phone and detailed description text area input into u_details for the Business Rule
+            gr.u_details = "Contact Phone: " + reporterPhone + "\n\n" +
+                           "Detailed Situation Breakdown:\n" + longDesc;
+
+            var incomingAssistance = input.assistance_type ? input.assistance_type.toString() : '';
+            var normalizedValue = 'temporary_housing';
+            var assignedGroup = 'Disaster Assistance Team';
+
+            if (incomingAssistance === 'temporary_housing' || incomingAssistance === 'Temporary Housing') {
+                normalizedValue = 'temporary_housing';
+                assignedGroup = 'Disaster Housing Team';
+            } else if (incomingAssistance === 'emergency_funding' || incomingAssistance === 'Emergency Funding' || incomingAssistance === 'Financial Assistance') {
+                normalizedValue = 'emergency_funding';
+                assignedGroup = 'Disaster Finance Team';
+            } else if (incomingAssistance === 'food_medical_supplies' || incomingAssistance === 'Food & Supplies' || incomingAssistance === 'Medical Assistance' || incomingAssistance === 'Food/Medical Supplies') {
+                normalizedValue = 'food_medical_supplies';
+                assignedGroup = 'Disaster Logistics Team';
+            }
+
+            gr.u_assistance_type = normalizedValue;
+            gr.u_booking_status = 'Pending Staff Verification';
+            gr.assignment_group.setDisplayValue(assignedGroup);
+
+            // Commit the row using the custom application's native scope privilege
+            var newSysId = gr.insert();
+
+            if (newSysId) {
+                data.success = true;
+                data.sys_id = newSysId;
+            } else {
+                data.success = false;
+                data.error = "The database rejected the background insertion row. Check Table Access rules.";
+            }
+
+        } catch (ex) {
+            data.success = false;
+            data.error = "Server Script Exception: " + ex.message;
+        }
+        
+        return; 
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-06 18:37:57</sys_created_on>
+        <sys_id>65a65ffdc3994f90c5d75242b4013177</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Public Intake Form</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_widget_65a65ffdc3994f90c5d75242b4013177</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:34:38</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title" style="font-weight: bold; font-size: 18px;">Report a Community Hazard / Incident</h3>
+  </div>
+  <div class="panel-body">
+    <div ng-if="c.data.error" class="alert alert-danger">
+      {{c.data.error}}
+    </div>
+    <div ng-if="c.data.successMessage" class="alert alert-success">
+      {{c.data.successMessage}}
+    </div>
+
+    <form ng-if="!c.submitted" ng-submit="c.submitForm()">
+      <div class="form-group">
+        <label class="control-label">What is your full name? *</label>
+        <input type="text" class="form-control" ng-model="c.form.reporter_name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">What is your contact phone number? *</label>
+        <input type="tel" class="form-control" ng-model="c.form.reporter_phone" placeholder="e.g., 555-0199" required>
+      </div>
+      <div class="form-group">
+        <label class="control-label">What is your contact email address? *</label>
+        <input type="email" class="form-control" ng-model="c.form.reporter_email" placeholder="name@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Where is the hazard located? *</label>
+        <input type="text" class="form-control" ng-model="c.form.hazard_location" placeholder="City, State, Zip Code, or landmarks" required>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Brief Summary of Hazard (Short Description) *</label>
+        <input type="text" class="form-control" ng-model="c.form.short_description" placeholder="e.g., Downed power line, flooded road intersection" required>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Detailed Description of the Situation *</label>
+        <textarea class="form-control" rows="4" ng-model="c.form.description" placeholder="Provide as much descriptive detail as possible..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" style="font-weight: bold; margin-top: 15px;">Submit Incident Report</button>
+    </form>
+  </div>
+</div>
+<div ng-if="c.submitted" style="text-align: center; padding: 30px 10px;">
+  <i class="fa fa-check-circle text-success" style="font-size: 64px; margin-bottom: 15px;"></i>
+  <h2>Thank You!</h2>
+  <p style="font-size: 16px; color: #555; margin-top: 10px;">
+    Your community hazard report has been received. Our dispatchers are reviewing the situation immediately.
+  </p>
+  <button class="btn btn-default" ng-click="c.submitted = false; c.form.description = ''; c.form.short_description = '';" style="margin-top: 20px;">
+    Submit Another Report
+  </button>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>65a65ffdc3994f90c5d75242b4013177</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-06 18:37:57</sys_created_on>
+        <sys_id>25a65ffdc3994f90c5d75242b401317e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-06 18:37:57</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -31,12 +31,16 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	// Check if the previous state was 'awaiting_manager_approval'
-	// If it wasn't, block the database update!
-	if (previous.u_booking_status != 'awaiting_manager_approval') {
-		gs.addErrorMessage('CRITICAL ERROR: A disaster assistance request cannot be marked as Approved without first being submitted for Manager Approval.');
-		current.setAbortAction(true); // This completely stops the record from saving to the database
-	}
+    // 1. If this is a brand new record insertion, skip this validation check entirely
+    if (current.isNewRecord()) {
+        return;
+    }
+
+    // 2. Only enforce the strict transition rule for existing records being updated
+    if (previous.u_booking_status != 'awaiting_manager_approval') {
+        gs.addErrorMessage('CRITICAL ERROR: A disaster assistance request cannot be marked as Approved without first being submitted for Manager Approval.');
+        current.setAbortAction(true); // This completely stops the record from saving to the database
+    }
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -45,7 +49,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ad6e6fb0c3d58790c5d75242b40131e0</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Enforce Manager Approval State</sys_name>
         <sys_overrides/>
         <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
@@ -53,7 +57,7 @@
         <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
         <sys_update_name>sys_script_ad6e6fb0c3d58790c5d75242b40131e0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-03 17:51:45</sys_updated_on>
+        <sys_updated_on>2026-06-09 14:55:12</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

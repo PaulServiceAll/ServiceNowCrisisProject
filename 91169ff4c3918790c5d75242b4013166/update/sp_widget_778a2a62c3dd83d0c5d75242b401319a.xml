@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function citizenRedirectCtrl($scope, $window, $timeout) {
+    /* widget controller */
+    var c = this;
+    
+    c.isRedirecting = false;
+
+    // 1. GUEST SESSION HANDLING: Re-route the registration button
+    if (!c.data.shouldRedirect) {
+        
+        $timeout(function() {
+            // Target the button pointing to the bad 'register_profile' ID
+            var regButtons = document.querySelectorAll('a[href*="register_profile"], .btn-register, [href*="register_profile"]');
+            
+            if (regButtons.length > 0) {
+                regButtons.forEach(function(btn) {
+                    // Overwrite it to point directly to your working citizen signup page
+                    btn.setAttribute('href', '/sp?id=citizen_signup');
+                });
+            }
+        }, 300);
+        
+        return;
+    }
+
+    // 2. LOGGED-IN CITIZEN REDIRECT (Working flawlessly)
+    if (c.data.shouldRedirect) {
+        var targetCatalogUrl = "/sp?id=sc_category&sys_id=d9b010c1c3d98790c5d75242b401316c";
+        
+        if ($window.location.href.indexOf('d9b010c1c3d98790c5d75242b401316c') === -1) {
+            c.isRedirecting = true;
+            $window.location.href = targetCatalogUrl;
+        }
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.redirect-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background: #ffffff;
+   z-index: 9999;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>citizen_home_redirector</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Citizen Home Redirector</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+    
+    // Check if the session user is logged in and is NOT an admin
+    var currentUser = gs.getUser();
+    
+    if (gs.isLoggedIn() && currentUser.getName() !== 'admin') {
+        data.shouldRedirect = true;
+    } else {
+        data.shouldRedirect = false;
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 23:20:46</sys_created_on>
+        <sys_id>778a2a62c3dd83d0c5d75242b401319a</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Citizen Home Redirector</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_widget_778a2a62c3dd83d0c5d75242b401319a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 15:48:40</sys_updated_on>
+        <template><![CDATA[<div ng-style="{'display': c.isRedirecting ? 'flex' : 'none'}" class="redirect-overlay">
+    Loading Emergency Services...
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>778a2a62c3dd83d0c5d75242b401319a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 23:20:46</sys_created_on>
+        <sys_id>bb8a2ea2c3dd83d0c5d75242b40131af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 23:20:46</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

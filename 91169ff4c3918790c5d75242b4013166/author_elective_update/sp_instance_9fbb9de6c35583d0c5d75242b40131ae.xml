@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">2babdd26c35583d0c5d75242b4013149</sp_column>
+        <sp_widget display_value="Login">6506d341cb33020000f8d856634c9cdc</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 17:36:24</sys_created_on>
+        <sys_id>9fbb9de6c35583d0c5d75242b40131ae</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_instance_9fbb9de6c35583d0c5d75242b40131ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 17:50:59</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+  "show_panel": {
+    "value": "true",
+    "displayValue": "true"
+  },
+  "use_advanced": {
+    "value": "true",
+    "displayValue": "true"
+  },
+  "landing_page": {
+    "value": "sc_category&sys_id=d9b010c1c3d98790c5d75242b401316c",
+    "displayValue": "sc_category&sys_id=d9b010c1c3d98790c5d75242b401316c"
+  }
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=9fbb9de6c35583d0c5d75242b40131ae"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</application>
+        <file_path/>
+        <instance_id>3185c048db32f9d4b1eb9027c596191d</instance_id>
+        <instance_name>dev222928</instance_name>
+        <name>sp_instance_9fbb9de6c35583d0c5d75242b40131ae</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph&gt;empty&lt;/glyph&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;2babdd26c35583d0c5d75242b4013149&lt;/sp_column&gt;&lt;sp_widget display_value="Login"&gt;6506d341cb33020000f8d856634c9cdc&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-08 17:36:24&lt;/sys_created_on&gt;&lt;sys_id&gt;9fbb9de6c35583d0c5d75242b40131ae&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Emergency Disaster Assistance"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_9fbb9de6c35583d0c5d75242b40131ae&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-08 17:50:59&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+  "show_panel": {
+    "value": "true",
+    "displayValue": "true"
+  },
+  "use_advanced": {
+    "value": "true",
+    "displayValue": "true"
+  },
+  "landing_page": {
+    "value": "sc_category&amp;sys_id=d9b010c1c3d98790c5d75242b401316c",
+    "displayValue": "sc_category&amp;sys_id=d9b010c1c3d98790c5d75242b401316c"
+  }
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=9fbb9de6c35583d0c5d75242b40131ae"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1504702822</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>0f4c5f3cc3158790c5d75242b401312a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 17:50:59</sys_created_on>
+        <sys_id>0d1fd122c39583d0c5d75242b40131f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ea85bf7760000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 17:50:59</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>891fd122b99583d0c0f18b27185d73f5</update_guid>
+        <update_guid_history>891fd122b99583d0c0f18b27185d73f5:-1504702822,7a1d192e695583d082b1f876797259ef:-351197780,57bb9de6c55583d0b31228c8788711b3:-1594287037</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">a174656ec39583d0c5d75242b40131d3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 18:14:30</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>079e338af914404996654153ca4f4009</sys_id>
+        <sys_metadata>9fbb9de6c35583d0c5d75242b40131ae</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_scope_delete display_value="">07e0092b8f414d6280a99c26bf4402d9</sys_scope_delete>
+        <sys_update_name>sp_instance_9fbb9de6c35583d0c5d75242b40131ae</sys_update_name>
+        <sys_update_version display_value="sp_instance_9fbb9de6c35583d0c5d75242b40131ae">0d1fd122c39583d0c5d75242b40131f6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 18:14:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

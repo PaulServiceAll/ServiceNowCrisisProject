@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">1a4faca2c31183d0c5d75242b4013144</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 14:22:53</sys_created_on>
+        <sys_id>347feca2c31183d0c5d75242b40131b5</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Login </sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_instance_347feca2c31183d0c5d75242b40131b5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 19:42:06</sys_updated_on>
+        <title>Login </title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div class=\"jumbotron text-center\" style=\"background-color: #f8f9fa; padding: 40px; border-radius: 8px; border: 1px solid #e3e6f0; max-width: 800px; margin: 40px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\">\r\n<h1 style=\"color: #4e73df; font-weight: bold; margin-bottom: 20px; font-size: 32px;\">Emergency Disaster Assistance Portal</h1>\r\n<p style=\"font-size: 16px; color: #6e707e; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;\">Welcome to the community emergency coordination platform. Registered citizens can utilize this portal to request individual personal aid or report urgent hazards discovered on public infrastructure.</p>\r\n<hr style=\"margin: 30px auto; border-top: 1px solid #e3e6f0; max-width: 200px;\">\r\n<p style=\"font-size: 14px; color: #858796; margin-bottom: 25px; font-style: italic;\">To secure your data privacy and track your triage status in real-time, please register an account or sign in.</p>\r\n<div class=\"button-group\" style=\"display: flex; justify-content: center; gap: 15px;\"><a class=\"btn btn-primary btn-lg\" style=\"padding: 12px 35px; font-weight: bold; background-color: #4e73df; border-color: #4e73df; box-shadow: 0 4px 10px rgba(78,115,223,0.2);\" role=\"button\" href=\"/sp?id=register_profile\">Register New Account</a> <a class=\"btn btn-default btn-lg\" style=\"padding: 12px 35px; font-weight: bold; color: #4e73df; background-color: white; border-color: #4e73df; box-shadow: 0 4px 10px rgba(0,0,0,0.05);\" role=\"button\" href=\"/sp?id=login&amp;user_login_redirect_url=%2Fsp%3Fid%3Dsc_category%26sys_id%3Dd9b010c1c3d98790c5d75242b401316c\"> Sign In </a></div>\r\n</div>",
+		"displayValue": "<div class=\"jumbotron text-center\" style=\"background-color: #f8f9fa; padding: 40px; border-radius: 8px; border: 1px solid #e3e6f0; max-width: 800px; margin: 40px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.05);\">\n<h1 style=\"color: #4e73df; font-weight: bold; margin-bottom: 20px; font-size: 32px;\">Emergency Disaster Assistance Portal</h1>\n<p style=\"font-size: 16px; color: #6e707e; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;\">Welcome to the community emergency coordination platform. Registered citizens can utilize this portal to request individual personal aid or report urgent hazards discovered on public infrastructure.</p>\n<hr style=\"margin: 30px auto; border-top: 1px solid #e3e6f0; max-width: 200px;\">\n<p style=\"font-size: 14px; color: #858796; margin-bottom: 25px; font-style: italic;\">To secure your data privacy and track your triage status in real-time, please register an account or sign in.</p>\n<div class=\"button-group\" style=\"display: flex; justify-content: center; gap: 15px;\"><a class=\"btn btn-primary btn-lg\" style=\"padding: 12px 35px; font-weight: bold; background-color: #4e73df; border-color: #4e73df; box-shadow: 0 4px 10px rgba(78,115,223,0.2);\" role=\"button\" href=\"/sp?id=register_profile\">Register New Account</a> <a class=\"btn btn-default btn-lg\" style=\"padding: 12px 35px; font-weight: bold; color: #4e73df; background-color: white; border-color: #4e73df; box-shadow: 0 4px 10px rgba(0,0,0,0.05);\" role=\"button\" href=\"/sp?id=login&amp;user_login_redirect_url=%2Fsp%3Fid%3Dsc_category%26sys_id%3Dd9b010c1c3d98790c5d75242b401316c\"> Sign In </a></div>\n</div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=347feca2c31183d0c5d75242b40131b5"/>
+</record_update>

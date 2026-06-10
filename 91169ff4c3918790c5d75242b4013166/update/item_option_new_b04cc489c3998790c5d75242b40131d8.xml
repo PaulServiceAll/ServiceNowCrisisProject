@@ -8,9 +8,9 @@
         <choice_field/>
         <choice_table/>
         <conversational_label/>
-        <create_roles/>
+        <create_roles>public</create_roles>
         <default_html_value/>
-        <default_value/>
+        <default_value>javascript:gs.getUser().getDisplayName();</default_value>
         <delete_roles/>
         <delivery_plan/>
         <description/>
@@ -23,7 +23,7 @@
         <dynamic_value_field/>
         <enable_also_request_for>false</enable_also_request_for>
         <example_text/>
-        <field>u_citizen_name</field>
+        <field/>
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
@@ -42,24 +42,24 @@
         <macro/>
         <macroponent/>
         <mandatory>true</mandatory>
-        <map_to_field>true</map_to_field>
+        <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
         <name>u_citizen_name</name>
         <not_available_conversation>false</not_available_conversation>
-        <order/>
+        <order>100</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
         <question_text>What is your full name?</question_text>
         <read_only>false</read_only>
-        <read_roles/>
+        <read_roles>public</read_roles>
         <read_script/>
         <rec_lookup_price/>
         <rec_price_if_checked>0</rec_price_if_checked>
         <record/>
-        <record_producer_table>x_1834272_emergenc_disaster_assistance_request</record_producer_table>
+        <record_producer_table>incident</record_producer_table>
         <reference/>
         <reference_qual/>
         <reference_qual_condition/>
@@ -82,14 +82,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-03 19:59:52</sys_created_on>
         <sys_id>b04cc489c3998790c5d75242b40131d8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>What is your full name?</sys_name>
         <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
         <sys_policy/>
         <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
         <sys_update_name>item_option_new_b04cc489c3998790c5d75242b40131d8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-03 19:59:52</sys_updated_on>
+        <sys_updated_on>2026-06-09 13:23:56</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
@@ -107,7 +107,7 @@
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <visible_summary>true</visible_summary>
-        <write_roles/>
+        <write_roles>public</write_roles>
     </item_option_new>
     <sys_translated_text action="delete_multiple" query="documentkey=b04cc489c3998790c5d75242b40131d8"/>
     <fx_price action="delete_multiple" query="id=b04cc489c3998790c5d75242b40131d8"/>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>number,u_citizen_name,u_citizen_email,u_assistance_type,u_booking_status</field_list>
+        <filter/>
+        <glyph>empty</glyph>
+        <id/>
+        <maximum_entries>20</maximum_entries>
+        <order>1</order>
+        <order_by>number</order_by>
+        <order_direction>desc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">abd25e25c355cb90c5d75242b4013114</sp_column>
+        <sp_page/>
+        <sp_widget display_value="Data Table from URL Definition">8ae61f55cb21020000f8d856634c9c93</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-05 19:04:21</sys_created_on>
+        <sys_id>e6135ea1c355cb90c5d75242b4013118</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Track Your Disaster Assistance Status</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_instance_table_e6135ea1c355cb90c5d75242b4013118</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-06 20:00:38</sys_updated_on>
+        <table>x_1834272_emergenc_disaster_assistance_request</table>
+        <title>Track Your Disaster Assistance Status</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+  "public": true
+}]]></widget_parameters>
+    </sp_instance_table>
+    <sys_translated_text action="DELETE" query="documentkey=e6135ea1c355cb90c5d75242b4013118"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</application>
+        <file_path/>
+        <instance_id>3185c048db32f9d4b1eb9027c596191d</instance_id>
+        <instance_name>dev222928</instance_name>
+        <name>sp_instance_table_e6135ea1c355cb90c5d75242b4013118</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_table"&gt;&lt;sp_instance_table action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;display_field/&gt;&lt;field_list&gt;number,u_citizen_name,u_citizen_email,u_assistance_type,u_booking_status&lt;/field_list&gt;&lt;filter/&gt;&lt;glyph&gt;empty&lt;/glyph&gt;&lt;id/&gt;&lt;maximum_entries&gt;20&lt;/maximum_entries&gt;&lt;order&gt;1&lt;/order&gt;&lt;order_by&gt;number&lt;/order_by&gt;&lt;order_direction&gt;desc&lt;/order_direction&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;abd25e25c355cb90c5d75242b4013114&lt;/sp_column&gt;&lt;sp_page/&gt;&lt;sp_widget display_value="Data Table from URL Definition"&gt;8ae61f55cb21020000f8d856634c9c93&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_table&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 19:04:21&lt;/sys_created_on&gt;&lt;sys_id&gt;e6135ea1c355cb90c5d75242b4013118&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;Track Your Disaster Assistance Status&lt;/sys_name&gt;&lt;sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Emergency Disaster Assistance"&gt;91169ff4c3918790c5d75242b4013166&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_table_e6135ea1c355cb90c5d75242b4013118&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-06 20:00:38&lt;/sys_updated_on&gt;&lt;table&gt;x_1834272_emergenc_disaster_assistance_request&lt;/table&gt;&lt;title&gt;Track Your Disaster Assistance Status&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+  "public": true
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_table&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e6135ea1c355cb90c5d75242b4013118"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-61879749</payload_hash>
+        <record_name>Track Your Disaster Assistance Status</record_name>
+        <reverted_from/>
+        <source>0f4c5f3cc3158790c5d75242b401312a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-06 20:00:38</sys_created_on>
+        <sys_id>6099ebf1c35d4f90c5d75242b4013111</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19e9e85f0220000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-06 20:00:38</sys_updated_on>
+        <type>Instance with Table</type>
+        <update_guid>a099ebf1cf5d4f905d5b0b943e7c7a10</update_guid>
+        <update_guid_history>a099ebf1cf5d4f905d5b0b943e7c7a10:-61879749,4f0d66a53719cb90df6fc7b0c36fcbb8:-1550142603,be7762e988d5cb90ad26dc6cd2f77de1:1095924870,9b34de65ca55cb909a6e721a06334dde:842462846,e6131665cc55cb90cc16d87463d2d220:397942223</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Track Your Disaster Assistance Status">ae1babb5c35d4f90c5d75242b401311e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-06 20:07:19</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_table">sp_instance_table</sys_db_object>
+        <sys_id>04a9b83f54ab4f8b803b7b2f1c6ac691</sys_id>
+        <sys_metadata>e6135ea1c355cb90c5d75242b4013118</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Track Your Disaster Assistance Status</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_scope_delete display_value="">07e0092b8f414d6280a99c26bf4402d9</sys_scope_delete>
+        <sys_update_name>sp_instance_table_e6135ea1c355cb90c5d75242b4013118</sys_update_name>
+        <sys_update_version display_value="sp_instance_table_e6135ea1c355cb90c5d75242b4013118">6099ebf1c35d4f90c5d75242b4013111</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-06 20:07:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

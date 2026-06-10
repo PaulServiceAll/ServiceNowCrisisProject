@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1834272_emergenc_disaster_assistance_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Spawn Incident from Public Report</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    try {
+        var incGR = new GlideRecord('incident');
+        incGR.initialize();
+        
+        var citizenName  = current.getValue('u_citizen_name') || "Anonymous Citizen";
+        var citizenEmail = current.getValue('u_citizen_email') || "Not Provided";
+        var locationText = current.getValue('u_physical_location') || "Not Provided";
+        var shortSummary = current.getValue('u_summary') || "Public Community Hazard Report";
+        
+        // --- SECURE FORM THREAD INTERCEPTION ---
+        // Pulls the text area input straight out of the active widget memory context thread
+        var detailText = "";
+        if (typeof input !== 'undefined' && input && input.description) {
+            detailText = "Contact Phone: " + (input.reporter_phone || "Not Provided") + "\n\n" +
+                         "Detailed Situation Breakdown:\n" + input.description;
+        } else {
+            // Fallback safety route
+            detailText = current.getValue('u_details') || current.getValue('u_description') || "No text payload captured from form description field.";
+        }
+        
+        incGR.short_description = "Public Hazard: " + shortSummary;
+        
+        // Map everything beautifully inside the standard Incident Description field box
+        var formattedNotes = "Reporter Name: " + citizenName + "\n" +
+                             "Contact Email: " + citizenEmail + "\n" +
+                             "Reported Location: " + locationText + "\n\n" +
+                             "=========================================\n" +
+                             "DETAILED SITUATION DESCRIPTION:\n" + 
+                             "=========================================\n" + 
+                             detailText;
+                             
+        incGR.description = formattedNotes;
+        incGR.contact_type = "web";
+        
+        // Link the incident record directly back to your custom logging request row
+        incGR.parent = current.getUniqueValue(); 
+        
+        incGR.insert();
+        
+    } catch (err) {
+        gs.error("Failed to spawn background incident from public portal submission: " + err.message);
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-10 17:04:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>42572307c391c7d0c5d75242b4013135</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Spawn Incident from Public Report</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sys_script_42572307c391c7d0c5d75242b4013135</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-10 18:28:37</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=42572307c391c7d0c5d75242b4013135"/>
+</record_update>
