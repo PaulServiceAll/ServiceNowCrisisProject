@@ -146,69 +146,120 @@ c.data.successMessage = "Thank you! Your report has been submitted successfully.
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-06 18:37:57</sys_created_on>
         <sys_id>65a65ffdc3994f90c5d75242b4013177</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Public Intake Form</sys_name>
         <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
         <sys_policy/>
         <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
         <sys_update_name>sp_widget_65a65ffdc3994f90c5d75242b4013177</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-10 18:34:38</sys_updated_on>
-        <template><![CDATA[<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title" style="font-weight: bold; font-size: 18px;">Report a Community Hazard / Incident</h3>
-  </div>
-  <div class="panel-body">
-    <div ng-if="c.data.error" class="alert alert-danger">
-      {{c.data.error}}
+        <sys_updated_on>2026-06-11 16:25:06</sys_updated_on>
+        <template><![CDATA[<div class="public-incident-wrapper" style="padding: 40px 15px; min-height: 100vh; background: #f4f7f6;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        
+        <div class="text-center" style="margin-bottom: 30px;">
+          <div class="public-logo-icon" style="display: inline-block; font-size: 36px; color: #e74c3c; background: #1b2e3c; padding: 15px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom: 15px;">
+            <i class="fa fa-shield"></i>
+          </div>
+          <h2 style="color: #1b2e3c; font-weight: 700; margin: 0; font-size: 26px; letter-spacing: 0.5px; text-transform: uppercase;">CRISISPULSE</h2>
+          <p style="color: #718096; margin-top: 5px; font-size: 14px; font-weight: 500;">Public Emergency Intake & Hazard Reporting Command</p>
+        </div>
+
+        <div class="panel panel-default" style="border: 1px solid #edf2f7; border-radius: 8px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); overflow: hidden; background: #ffffff;">
+          
+          <div class="panel-heading" style="background: linear-gradient(135deg, #1b2e3c 0%, #2c3e50 100%); color: #ffffff; padding: 20px; border: none;">
+            <h3 class="panel-title" style="font-weight: 600; font-size: 16px; letter-spacing: 0.3px;">
+              <i class="fa fa-exclamation-triangle" style="color: #e74c3c; margin-right: 8px;"></i> File Public Assistance Request / Hazard Report
+            </h3>
+          </div>
+
+          <div class="panel-body" style="padding: 30px;">
+            
+            <div ng-if="c.data.error" class="alert alert-danger" style="border-radius: 4px; font-weight: 500;">
+              <i class="fa fa-times-circle"></i> {{c.data.error}}
+            </div>
+            <div ng-if="c.data.successMessage" class="alert alert-success" style="border-radius: 4px; font-weight: 500;">
+              <i class="fa fa-check-circle"></i> {{c.data.successMessage}}
+            </div>
+
+            <form ng-if="!c.submitted" ng-submit="c.submitForm()">
+              
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">What is your full name? *</label>
+                <div class="input-group">
+                  <span class="input-group-addon" style="background: #f8fafc; border-color: #cbd5e1; color: #718096;"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control" ng-model="c.form.reporter_name" placeholder="Enter your full name" style="height: 44px; border-color: #cbd5e1; border-radius: 0 4px 4px 0;" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">What is your contact phone number? *</label>
+                <div class="input-group">
+                  <span class="input-group-addon" style="background: #f8fafc; border-color: #cbd5e1; color: #718096;"><i class="fa fa-phone"></i></span>
+                  <input type="tel" class="form-control" ng-model="c.form.reporter_phone" placeholder="e.g., 555-0199" style="height: 44px; border-color: #cbd5e1; border-radius: 0 4px 4px 0;" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">What is your contact email address? *</label>
+                <div class="input-group">
+                  <span class="input-group-addon" style="background: #f8fafc; border-color: #cbd5e1; color: #718096;"><i class="fa fa-envelope"></i></span>
+                  <input type="email" class="form-control" ng-model="c.form.reporter_email" placeholder="name@example.com" style="height: 44px; border-color: #cbd5e1; border-radius: 0 4px 4px 0;" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">Where is the hazard located? *</label>
+                <div class="input-group">
+                  <span class="input-group-addon" style="background: #f8fafc; border-color: #cbd5e1; color: #718096;"><i class="fa fa-map-marker"></i></span>
+                  <input type="text" class="form-control" ng-model="c.form.hazard_location" placeholder="City, State, Zip Code, or landmarks" style="height: 44px; border-color: #cbd5e1; border-radius: 0 4px 4px 0;" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 20px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">Brief Summary of Hazard (Short Description) *</label>
+                <div class="input-group">
+                  <span class="input-group-addon" style="background: #f8fafc; border-color: #cbd5e1; color: #718096;"><i class="fa fa-tag"></i></span>
+                  <input type="text" class="form-control" ng-model="c.form.short_description" placeholder="e.g., Downed power line, flooded road intersection" style="height: 44px; border-color: #cbd5e1; border-radius: 0 4px 4px 0;" required>
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 25px;">
+                <label style="font-weight: 700; color: #2c3e50; margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.3px;">Detailed Description of the Situation *</label>
+                <textarea class="form-control" rows="5" ng-model="c.form.description" placeholder="Provide as much descriptive detail as possible..." style="border-color: #cbd5e1; border-radius: 4px; resize: none;" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-block btn-lg" 
+                      style="font-weight: bold; height: 50px; background-color: #e74c3c; border: none; font-size: 15px; letter-spacing: 0.5px; text-transform: uppercase; transition: all 0.2s ease-in-out; box-shadow: 0 4px 12px rgba(231,76,60,0.2);">
+                <i class="fa fa-paper-plane" style="margin-right: 6px;"></i> Dispatch Incident Report
+              </button>
+            </form>
+
+            <div ng-if="c.submitted" style="text-align: center; padding: 20px 10px;">
+              <i class="fa fa-check-circle text-success" style="font-size: 72px; color: #2ecc71; margin-bottom: 20px;"></i>
+              <h2 style="color: #1b2e3c; font-weight: 700; margin: 0 0 10px 0; font-size: 24px;">Thank You!</h2>
+              <p style="font-size: 15px; color: #4a5568; line-height: 1.6; margin-bottom: 25px;">
+                Your community hazard report has been received. Our dispatchers are reviewing the situation immediately.
+              </p>
+              <button class="btn btn-default" ng-click="c.submitted = false; c.form.description = ''; c.form.short_description = '';" 
+                      style="height: 42px; padding: 0 25px; border-color: #cbd5e1; font-weight: 600; color: #4a5568; background: #ffffff; transition: background 0.2s;">
+                <i class="fa fa-refresh"></i> Submit Another Report
+              </button>
+            </div>
+
+          </div>
+          
+          <div class="panel-footer text-center" style="background: #f8fafc; border-top: 1px solid #edf2f7; padding: 15px; font-size: 13px; color: #718096;">
+            Already have an active registration track? <a href="/sp?id=login" style="color: #2c3e50; font-weight: 700; text-decoration: none; margin-left: 3px;">Sign In here <i class="fa fa-arrow-right"></i></a>
+          </div>
+
+        </div>
+        
+      </div>
     </div>
-    <div ng-if="c.data.successMessage" class="alert alert-success">
-      {{c.data.successMessage}}
-    </div>
-
-    <form ng-if="!c.submitted" ng-submit="c.submitForm()">
-      <div class="form-group">
-        <label class="control-label">What is your full name? *</label>
-        <input type="text" class="form-control" ng-model="c.form.reporter_name" placeholder="Enter your full name" required>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">What is your contact phone number? *</label>
-        <input type="tel" class="form-control" ng-model="c.form.reporter_phone" placeholder="e.g., 555-0199" required>
-      </div>
-      <div class="form-group">
-        <label class="control-label">What is your contact email address? *</label>
-        <input type="email" class="form-control" ng-model="c.form.reporter_email" placeholder="name@example.com" required>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">Where is the hazard located? *</label>
-        <input type="text" class="form-control" ng-model="c.form.hazard_location" placeholder="City, State, Zip Code, or landmarks" required>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">Brief Summary of Hazard (Short Description) *</label>
-        <input type="text" class="form-control" ng-model="c.form.short_description" placeholder="e.g., Downed power line, flooded road intersection" required>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label">Detailed Description of the Situation *</label>
-        <textarea class="form-control" rows="4" ng-model="c.form.description" placeholder="Provide as much descriptive detail as possible..." required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-block" style="font-weight: bold; margin-top: 15px;">Submit Incident Report</button>
-    </form>
   </div>
-</div>
-<div ng-if="c.submitted" style="text-align: center; padding: 30px 10px;">
-  <i class="fa fa-check-circle text-success" style="font-size: 64px; margin-bottom: 15px;"></i>
-  <h2>Thank You!</h2>
-  <p style="font-size: 16px; color: #555; margin-top: 10px;">
-    Your community hazard report has been received. Our dispatchers are reviewing the situation immediately.
-  </p>
-  <button class="btn btn-default" ng-click="c.submitted = false; c.form.description = ''; c.form.short_description = '';" style="margin-top: 20px;">
-    Submit Another Report
-  </button>
 </div>]]></template>
     </sp_widget>
     <sys_es_latest_script action="INSERT_OR_UPDATE">

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+  var c = this;
+
+  c.submit = function() {
+    // Validate that amount is provided if financial assistance is selected
+    if (!c.category || !c.location || !c.desc) return;
+    if (c.category == 'emergency_funding' && !c.amount) return;
+
+    c.server.get({
+      action: 'submit_request',
+      category: c.category,
+      location: c.location,
+      amount: c.amount, // Pass the funding amount
+      desc: c.desc
+    }).then(function(response) {
+      c.category = '';
+      c.location = '';
+      c.amount = ''; // Clear the amount field
+      c.desc = '';
+      c.data.requests = response.data.requests;
+    });
+  };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.workplace-container {
+    background: #f4f7f6;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.command-header {
+    background: linear-gradient(135deg, #1b2e3c 0%, #2c3e50 100%);
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.custom-logo {
+    font-size: 28px;
+    color: #e74c3c;
+    margin-right: 15px;
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-text-block h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.panel-submit {
+    border: 1px solid #d1dbe5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.panel-submit .panel-heading {
+    background-color: #1b2e3c !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px;
+}
+
+.panel-tracking {
+    border: 1px solid #d1dbe5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border-radius: 6px;
+}
+
+.panel-tracking .panel-heading {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.history-card {
+    padding: 20px; 
+    border-bottom: 1px solid #edf2f7;
+    transition: background 0.2s ease-in-out;
+}
+
+.history-card:hover {
+    background: #f8fafc;
+}
+
+.detail-bubble {
+    background: #f8fafc; 
+    border: 1px solid #edf2f7; 
+    padding: 12px; 
+    border-radius: 6px; 
+    font-size: 13px; 
+    color: #4a5568; 
+    margin-top: 8px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>citizen_workplace_hub</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Citizen Workplace Hub</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var userGR = gs.getUser();
+    data.userEmail = userGR.getEmail();
+    data.userName = userGR.getFirstName() + " " + userGR.getLastName();
+    if (!userGR.getFirstName()) data.userName = userGR.getDisplayName();
+    
+    data.requests = [];
+    data.kbArticles = [];
+
+    // ======================================================================
+    // 1. DYNAMIC RECORD INSERTION (With Conditional Funding Amount Mapping)
+    // ======================================================================
+    if (input && input.action === 'submit_request') {
+        try {
+            var newReq = new GlideRecord('x_1834272_emergenc_disaster_assistance_request');
+            newReq.initialize();
+            
+            // Map common fields across all intake types
+            newReq.setValue('u_citizen_name', data.userName);
+            newReq.setValue('u_citizen_email', data.userEmail);
+            newReq.setValue('u_physical_location', input.location); 
+            newReq.setValue('u_assistance_type', input.category);
+            newReq.setValue('u_booking_status', 'Pending Staff Verification');
+            
+            // CONDITIONAL LAYER: Map financial data if type is emergency funding
+            if (input.category === 'emergency_funding' && input.amount) {
+                newReq.setValue('u_funding_amount_requested', input.amount);
+            }
+            
+            // Construct tracking metrics for short description and details logs
+            var summaryText = "Emergency Assistance Request for " + input.category.replace('_', ' ');
+            newReq.setValue('u_summary', summaryText);
+            newReq.setValue('short_description', summaryText);
+            newReq.setValue('u_details', input.desc);
+            newReq.setValue('description', input.desc); 
+
+            // Assignment group programmatic routing engine
+            var targetGroup = 'Disaster Assistance Team';
+            if (input.category === 'temporary_housing') {
+                targetGroup = 'Disaster Housing Team';
+            } else if (input.category === 'emergency_funding') {
+                targetGroup = 'Disaster Finance Team';
+            } else if (input.category === 'food_medical_supplies') {
+                targetGroup = 'Disaster Logistics Team';
+            }
+            
+            newReq.assignment_group.setDisplayValue(targetGroup);
+
+            var insertResult = newReq.insert();
+            if (insertResult) {
+                gs.addInfoMessage("Your emergency request has been successfully processed and logged.");
+            }
+        } catch (ex) {
+            gs.error("Workplace engine transaction exception: " + ex.message);
+        }
+    }
+
+    // ======================================================================
+    // 2. FETCH CHRONOLOGICAL USER REQUEST HISTORY FOR THE DASHBOARD
+    // ======================================================================
+    var reqGR = new GlideRecord('x_1834272_emergenc_disaster_assistance_request'); 
+    reqGR.addQuery('u_citizen_email', data.userEmail); 
+    reqGR.orderByDesc('sys_created_on');
+    reqGR.query();
+    while (reqGR.next()) {
+        data.requests.push({
+            category: reqGR.getDisplayValue('u_assistance_type'), 
+            status: reqGR.getDisplayValue('u_booking_status'),     
+            created: reqGR.getDisplayValue('sys_created_on'),
+            description: reqGR.getValue('u_details') || reqGR.getValue('description') || reqGR.getValue('u_summary') || 'No details provided.'
+        });
+    }
+
+    // ======================================================================
+    // 3. FETCH USER-ACCESSIBLE EMERGENCY KNOWLEDGE ARTICLES
+    // ======================================================================
+    var kbGR = new GlideRecord('kb_knowledge');
+    kbGR.addQuery('workflow_state', 'published');
+    kbGR.setLimit(3);
+    kbGR.query();
+    while (kbGR.next()) {
+        data.kbArticles.push({
+            sys_id: kbGR.getUniqueValue(),
+            title: kbGR.getValue('short_description')
+        });
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 13:46:34</sys_created_on>
+        <sys_id>f5e38427c3d14bd0c5d75242b4013175</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Citizen Workplace Hub</sys_name>
+        <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
+        <sys_update_name>sp_widget_f5e38427c3d14bd0c5d75242b4013175</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 16:21:01</sys_updated_on>
+        <template><![CDATA[<div class="workplace-container">
+  
+  <div class="command-header">
+    <div class="custom-logo">
+      <i class="fa fa-shield"></i>
+    </div>
+    <div class="header-text-block">
+      <h2>CRISISPULSE | Citizen Response Workplace</h2>
+      <p style="margin: 3px 0 0 0; color: #cbd5e1; font-size: 13px; opacity: 0.9;">
+        <i class="fa fa-user-circle"></i> Authenticated Session Securely Connected: <b>{{data.userEmail}}</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">
+      
+      <div class="panel panel-primary panel-submit">
+        <div class="panel-heading">
+          <i class="fa fa-plus-square"></i> Request Logistics Allocation
+        </div>
+        <div class="panel-body" style="padding: 20px;">
+          
+          <div class="form-group">
+            <label style="font-weight: bold; color: #2c3e50;">Assistance Type</label>
+            <select class="form-control" ng-model="c.category" style="height: 42px;">
+              <option value="">-- Select Assistance Needed --</option>
+              <option value="temporary_housing">Temporary Housing</option>
+              <option value="emergency_funding">Financial Assistance</option>
+              <option value="food_medical_supplies">Food / Medical Supplies</option>
+            </select>
+          </div>
+
+          <div class="form-group ng-cloak" ng-if="c.category == 'emergency_funding'">
+            <label style="font-weight: bold; color: #2c3e50;">Funding Amount Requested ($)</label>
+            <div class="input-group">
+              <span class="input-group-addon" style="background: #edf2f7;"><i class="fa fa-usd"></i></span>
+              <input type="number" class="form-control" ng-model="c.amount" placeholder="e.g., 500" style="height: 42px;" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label style="font-weight: bold; color: #2c3e50;">Your Current Location</label>
+            <div class="input-group">
+              <span class="input-group-addon" style="background: #edf2f7;"><i class="fa fa-map-marker"></i></span>
+              <input type="text" class="form-control" ng-model="c.location" placeholder="Street Address, Area, or Coordinates" style="height: 42px;" />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label style="font-weight: bold; color: #2c3e50;">Situation Details / Description</label>
+            <textarea class="form-control" rows="4" ng-model="c.desc" placeholder="Please provide specific details about your current displacement context..."></textarea>
+          </div>
+          
+          <button class="btn btn-danger btn-block btn-lg" 
+                  ng-click="c.submit()" 
+                  ng-disabled="!c.category || !c.location || !c.desc || (c.category == 'emergency_funding' && !c.amount)" 
+                  style="font-weight: bold; height: 46px; background-color: #e74c3c; border: none; transition: background 0.2s;">
+            <i class="fa fa-paper-plane"></i> Transmit Intake Request
+          </button>
+        </div>
+      </div>
+
+      <div class="panel panel-default" style="border-radius: 6px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+        <div class="panel-heading" style="background-color: #ffffff; font-weight: bold; color: #1b2e3c; border-bottom: 2px solid #edf2f7; padding: 15px;">
+          <i class="fa fa-book" style="color: #e74c3c;"></i> Local Tactical Safety Guides
+        </div>
+        <div class="list-group" style="max-height: 185px; overflow-y: auto; margin-bottom: 0; background: #ffffff;">
+          <a ng-repeat="article in data.kbArticles" 
+             ng-href="?id=kb_article&sys_id={{article.sys_id}}" 
+             class="list-group-item" 
+             style="padding: 12px 15px; border-left: 4px solid #1b2e3c; margin-bottom: 1px;">
+            <h5 class="list-group-item-heading" style="margin: 0 0 4px 0; color: #1b2e3c; font-weight: bold;">
+              {{article.title}}
+            </h5>
+            <p class="list-group-item-text small text-muted" style="margin: 0;">Click to open offline-cached resilience brief.</p>
+          </a>
+          <div ng-if="data.kbArticles.length == 0" class="text-muted text-center" style="padding: 20px; font-style: italic;">
+            No disaster briefings published.
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="col-md-7">
+      <div class="panel panel-default panel-tracking">
+        <div class="panel-heading">
+          <h3 class="panel-title" style="font-weight: 600; font-size: 15px;">
+            <i class="fa fa-bars"></i> Active Response Record Feed Logs
+          </h3>
+        </div>
+        
+        <div class="list-group" style="max-height: 590px; overflow-y: auto; margin-bottom: 0; background: #ffffff;">
+          
+          <div ng-if="data.requests.length == 0" class="text-center text-muted" style="padding: 100px 20px;">
+            <i class="fa fa-rss" style="font-size: 56px; color: #cbd5e1; margin-bottom: 15px;"></i>
+            <p style="font-size: 16px; margin: 0; font-weight: 600;">No operational tickets linked to your citizen profile signature.</p>
+          </div>
+          
+          <div ng-repeat="req in data.requests" class="history-card">
+            
+            <span class="pull-right label" 
+                  ng-class="{
+                    'label-danger': req.status == 'Pending Staff Verification' || req.status == 'Pending' || req.status == 'New', 
+                    'label-warning': req.status == 'Awaiting Manager Approval' || req.status == 'Work in Progress' || req.status == 'Assigned' || req.status == 'Modified', 
+                    'label-success': req.status == 'Approved' || req.status == 'Closed Complete' || req.status == 'Resolved',
+                    'label-default': req.status == 'Cancelled' || req.status == 'None'
+                  }"
+                  style="font-size: 11px; padding: 6px 10px; font-weight: 600; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.3px;">
+              {{req.status}}
+            </span>
+            
+            <h4 class="list-group-item-heading" style="font-weight: 700; color: #1b2e3c; margin-top: 0; margin-bottom: 6px; font-size: 16px;">
+              <span ng-if="req.category == 'temporary_housing'"><i class="fa fa-home" style="color:#3498db;"></i> Temporary Housing Allocation</span>
+              <span ng-if="req.category == 'emergency_funding'"><i class="fa fa-money" style="color:#2ecc71;"></i> Emergency Financial Aid</span>
+              <span ng-if="req.category == 'food_medical_supplies'"><i class="fa fa-medkit" style="color:#e74c3c;"></i> Critical Food & Medical Supply Logistics</span>
+              <span ng-if="req.category != 'temporary_housing' && req.category != 'emergency_funding' && req.category != 'food_medical_supplies'"><i class="fa fa-exclamation-circle"></i> {{req.category}}</span>
+            </h4>
+            
+            <p class="small text-muted" style="margin-bottom: 12px;">
+              <i class="fa fa-clock-o"></i> Telemetry Timestamp: <b>{{req.created}}</b>
+            </p>
+            
+            <div class="detail-bubble">
+              {{req.description}}
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f5e38427c3d14bd0c5d75242b4013175</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-11 13:46:34</sys_created_on>
+        <sys_id>31e38427c3d14bd0c5d75242b401317a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-11 13:46:34</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

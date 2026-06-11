@@ -9,7 +9,6 @@
 
     // 1. GUEST SESSION HANDLING: Re-route the registration button
     if (!c.data.shouldRedirect) {
-        
         $timeout(function() {
             // Target the button pointing to the bad 'register_profile' ID
             var regButtons = document.querySelectorAll('a[href*="register_profile"], .btn-register, [href*="register_profile"]');
@@ -27,9 +26,10 @@
 
     // 2. LOGGED-IN CITIZEN REDIRECT (Working flawlessly)
     if (c.data.shouldRedirect) {
-        var targetCatalogUrl = "/sp?id=sc_category&sys_id=d9b010c1c3d98790c5d75242b401316c";
+        var targetCatalogUrl = "/sp?id=disaster_citizen_workplace";
         
-        if ($window.location.href.indexOf('d9b010c1c3d98790c5d75242b401316c') === -1) {
+        // Added the missing opening brace back to the end of this line
+        if ($window.location.href.indexOf('disaster_citizen_workplace') === -1) {
             c.isRedirecting = true;
             $window.location.href = targetCatalogUrl;
         }
@@ -79,14 +79,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-06-08 23:20:46</sys_created_on>
         <sys_id>778a2a62c3dd83d0c5d75242b401319a</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Citizen Home Redirector</sys_name>
         <sys_package display_value="Emergency Disaster Assistance" source="x_1834272_emergenc">91169ff4c3918790c5d75242b4013166</sys_package>
         <sys_policy/>
         <sys_scope display_value="Emergency Disaster Assistance">91169ff4c3918790c5d75242b4013166</sys_scope>
         <sys_update_name>sp_widget_778a2a62c3dd83d0c5d75242b401319a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-06-10 15:48:40</sys_updated_on>
+        <sys_updated_on>2026-06-11 13:58:23</sys_updated_on>
         <template><![CDATA[<div ng-style="{'display': c.isRedirecting ? 'flex' : 'none'}" class="redirect-overlay">
     Loading Emergency Services...
 </div>]]></template>
